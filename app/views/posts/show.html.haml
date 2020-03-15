@@ -6,7 +6,7 @@
         = link_to @post.user.name, user_path(@post.user.id), class: "content__topss__name"
         //= "さんの投稿"
 
-        -# = render "favorites/favorite"
+        = render "favorites/favorite"
         -# - if user_signed_in?
         -#   - if @post.bookmarked_by?(current_user) 
         -#     / ログインしているユーザーがお気に入りしたかどうかで分岐

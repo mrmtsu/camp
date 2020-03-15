@@ -1,0 +1,13 @@
+//いいね件数
+- if user_signed_in?
+  - if current_user.already_favorited?(@post)
+    = link_to post_favorites_path(@post), method: :delete, id: 'favorite-link', remote: true do
+      = raw favorite_icon(@post, current_user)
+      %h6= @post.favorites.count.to_s
+  - else
+    = link_to post_favorites_path(@post), method: :post, id: 'favorite-link-to', remote: true do
+      = raw favorite_icon(@post, current_user)
+      %h6= @post.favorites.count.to_s
+
+
+
