@@ -1,0 +1,7 @@
+%h2 ユーザー一覧
+= @bookamrks.length
+  - @bookamrks.each do |bookmark|
+    - @user_id = clip.user_id
+    - user = User.find(@user_id)
+    .name2
+      = link_to user.username ,user_path(user)

@@ -21,7 +21,6 @@ Rails.application.routes.draw do
     member do
       get :following, :followers, :users_posts#追記
     end
-    resources :maps
     resource :bookmarks, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:create]

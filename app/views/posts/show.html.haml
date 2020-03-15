@@ -7,18 +7,18 @@
         //= "さんの投稿"
 
         = render "favorites/favorite"
-        -# - if user_signed_in?
-        -#   - if @post.bookmarked_by?(current_user) 
-        -#     / ログインしているユーザーがお気に入りしたかどうかで分岐
-        -#     %p
-        -#       //お気に入り解除
-        -#       = link_to post_bookmarks_path(@post.id), method: :delete, id: 'bookmark-link' do
-        -#         = raw bookmark_icon(@post, current_user)
-        -#   - else
-        -#     %p
-        -#       //お気に入り登録
-        -#       = link_to post_bookmarks_path(@post), method: :post, id: 'bookmark-link-to' do
-        -#         = raw bookmark_icon(@post, current_user)
+        - if user_signed_in?
+          - if @post.bookmarked_by?(current_user) 
+            / ログインしているユーザーがお気に入りしたかどうかで分岐
+            %p
+              //お気に入り解除
+              = link_to post_bookmarks_path(@post.id), method: :delete, id: 'bookmark-link' do
+                = raw bookmark_icon(@post, current_user)
+          - else
+            %p
+              //お気に入り登録
+              = link_to post_bookmarks_path(@post), method: :post, id: 'bookmark-link-to' do
+                = raw bookmark_icon(@post, current_user)
 
       //ログイン中のユーザーであれば編集・削除ページ遷移可能
       - if user_signed_in? && current_user.id == @post.user.id

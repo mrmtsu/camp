@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
   has_many :followers, through: :passive_relationships, source: :following
 
+  has_many :bookmarks
+  
   mount_uploader :avatar, AvatarUploader
 
   validates :name, presence: true, uniqueness: true
@@ -26,6 +28,10 @@ class User < ApplicationRecord
 
   def followed_by?(user)
     passive_relationships.find_by(following_id: user.id).present?
+  end
+
+  def bookmarked_by?(user)
+    passive_bookmarks.find_by(post_id: user.id).present?
   end
   
 end
