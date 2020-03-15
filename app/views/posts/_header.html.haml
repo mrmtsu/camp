@@ -1,0 +1,292 @@
+.header
+  .header__inner
+    .header__inner--list
+      .header__inner__logo
+        = link_to "CAMP", root_path, class: "header__inner__logos"
+      .header__inner__right
+        - if user_signed_in?
+          .header__inner__right__post
+            = link_to new_post_path, class: "header__inner__right__post--btn" do
+              = icon('fas', 'plus-circle')
+              .header__inner__right__post--btn
+                post
+          .header__inner__right__search
+            = link_to search_posts_path, class: "header__inner__right__search--btn" do
+              = icon('fas', 'search')
+              .header__inner__right__search--btn__name
+                Search
+          .header__inner__right__user
+            = link_to user_path(current_user.id), class: "header__inner__right__user--btn" do
+              = icon('fas', 'street-view')
+              .header__inner__right__user--btn__name
+                = current_user.name
+          .header__inner__right__logout
+            = link_to destroy_user_session_path, method: :delete, class: "header__inner__right__logout--btn" do
+              = icon('fas', 'user')
+              .header__inner__right__logout--btn__name
+                Logout
+        - else
+          .header__inner__right__user
+            = link_to new_user_registration_path, class: "header__inner__right__user--btn" do
+              = icon('fas', 'user-plus')
+              .header__inner__right__newuser--btn__name
+                signup
+          .header__inner__right__login
+            = link_to new_user_session_path, class: "header__inner__right__login--btn" do
+              = icon('fas', 'user')
+              .header__inner__right__login--btn__name
+                Login
+          .header__inner__right__search
+            = link_to search_posts_path, class: "header__inner__right__search--btn" do
+              = icon('fas', 'search')
+              .header__inner__right__search--btn__name
+                Search
+      #nav-drawer
+        %input{ id:"nav-input", type:"checkbox", class:"nav-unshown" }
+        %label{ id:"nav-open", for:"nav-input" }
+          %span
+        %label{ class:"nav-unshown", id:"nav-close", for:"nav-input" }
+        #nav-content
+          - if user_signed_in?
+            .nav-content__post
+              = link_to new_post_path, class: "nav-content__post--btn" do
+                /= icon('fas', 'plus-circle')
+                .nav-content__post--btn
+                  post
+            .nav-content__post
+              = link_to search_posts_path, class: "nav-content__search--btn" do
+                /= icon('fas', 'search')
+                .nav-content__search--btn__name
+                  Search
+            .nav-content__post
+              = link_to user_path(current_user.id), class: "nav-content__user--btn" do
+                /= icon('fas', 'street-view')
+                .nav-content__user--btn__name
+                  = current_user.name
+            .nav-content__post
+              = link_to destroy_user_session_path, method: :delete, class: "nav-content__logout--btn" do
+                /= icon('fas', 'user')
+                .nav-content__logout--btn__name
+                  Logout
+          - else
+            .nav-content__post
+              = link_to new_user_registration_path, class: "nav-content__user--btn" do
+                /= icon('fas', 'user-plus')
+                .nav-content__newuser--btn__name
+                  signup
+            .nav-content__post
+              = link_to new_user_session_path, class: "nav-content__login--btn" do
+                /= icon('fas', 'user')
+                .nav-content__login--btn__name
+                  Login
+            .nav-content__post
+              = link_to search_posts_path, class: "nav-content__search--btn" do
+                /= icon('fas', 'search')
+                .nav-content__search--btn__name
+                  Search
+
+
+  %ul.gnav
+    %li
+      %a{href:""}ONLINE SHOP
+
+      %ul.first
+        %li
+          -# - @parents.each do |parent|
+          -#   = link_to "#{parent.name}", categories_path(parent), class: "parent_category",id: "#{parent.id}"
+          -# %ul
+          -#   %li.children_list
+          -#     - @parents.each do |parent|
+          -#       - parent.children.each do |child|
+          -#         = link_to "#{child.name}", categories_path(child), class: "children_category",id: "#{child.id}"
+          -#     %ul
+          -#       %li.grand_children_list
+          -#         - @parents.each do |parent|
+          -#           - parent.children.each do |child|
+          -#             - child.children.each do |grandchild|
+          -#               = link_to "#{grandchild.name}", categories_path(grandchild), class: "grandchild_category",id: "#{grandchild.id}"
+                                
+    %li
+      %a{href:""}
+        NEWS
+      %ul.first
+        %li
+          %a{href:""}
+            Child1
+          %ul
+            %li
+              %a{href:""}
+                Grandchild1
+              %ul
+                %li
+                  %a{href:""}
+                    Greatgrandchild1
+                %li
+                  %a{href:""}
+                    Greatgrandchild2
+                %li
+                  %a{href:""}
+                    Greatgrandchild3
+            %li
+              %a{href:""}
+                Grandchild2
+              %ul
+                %li
+                  %a{href:""}
+                    Greatgrandchild1
+                %li
+                  %a{href:""}
+                    Greatgrandchild2
+                %li
+                  %a{href:""}
+                    Greatgrandchild3
+            %li
+              %a{href:""}
+                Grandchild3
+            %li
+              %a{href:""}
+                Grandchild4
+            %li
+              %a{href:""}
+                Grandchild5
+    %li
+      %a{href:""}
+        location
+      %ul.first
+        %li
+          %a{href:""}
+            北海道
+        %li
+          %a{href:""}
+            東北
+        %li
+          %a{href:""}
+            東日本
+        %li
+          %a{href:""}
+            西日本
+          %ul
+            %li
+              %a{href:""}
+                関西
+              %ul
+                %li
+                  %a{href:""}
+                    大阪
+                %li
+                  %a{href:""}
+                    京都
+                %li
+                  %a{href:""}
+                    兵庫
+                %li
+                  %a{href:""}
+                    奈良
+                %li
+                  %a{href:""}
+                    滋賀
+                %li
+                  %a{href:""}
+                    和歌山
+        %li
+          %a{href:""}
+            沖縄
+          %ul
+            %li
+              %a{href:""}
+                Grandchild1
+              %ul
+                %li
+                  %a{href:""}
+                    Greatgrandchild1
+                %li
+                  %a{href:""}
+                    Greatgrandchild2
+                %li
+                  %a{href:""}
+                    Greatgrandchild3
+            %li
+              %a{href:""}
+                Grandchild2
+            %li
+              %a{href:""}
+                Grandchild3
+            %li
+              %a{href:""}
+                Grandchild4
+            %li
+              %a{href:""}
+                Grandchild5
+    %li
+      %a{href:""}
+        Menu4
+      %ul.first
+        %li
+          %a{href:""}
+            Child1
+          %ul
+            %li
+              %a{href:""}
+                Grandchild1
+              %ul
+                %li
+                  %a{href:""}
+                    Greatgrandchild1
+                %li
+                  %a{href:""}
+                    Greatgrandchild2
+                %li
+                  %a{href:""}
+                    Greatgrandchild3
+            %li
+              %a{href:""}
+                Grandchild2
+            %li
+              %a{href:""}
+                Grandchild3
+            %li
+              %a{href:""}
+                Grandchild4
+            %li
+              %a{href:""}
+                Grandchild5
+    %li
+      %a{href:""}
+        Menu5
+      %ul.first
+        %li
+          %a{href:""}
+            Child1
+          %ul
+            %li
+              %a{href:""}
+                Grandchild1
+              %ul
+                %li
+                  %a{href:""}
+                    Greatgrandchild1
+                %li
+                  %a{href:""}
+                    Greatgrandchild2
+                %li
+                  %a{href:""}
+                    Greatgrandchild3
+            %li
+              %a{href:""}
+                Grandchild2
+            %li
+              %a{href:""}
+                Grandchild3
+            %li
+              %a{href:""}
+                Grandchild4
+            %li
+              %a{href:""}
+                Grandchild5
+
+
+
+
+
+
+ 

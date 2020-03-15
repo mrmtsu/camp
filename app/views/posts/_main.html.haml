@@ -1,0 +1,37 @@
+= render "header"
+
+
+.content
+  %ul.slider
+    %li
+      = image_tag '/assets/a.jpg'
+    %li
+      = image_tag '/assets/top.jpg'
+    %li
+      = image_tag '/assets/new.jpg'
+    %li
+      = image_tag '/assets/h.jpg'
+
+
+
+  .content__topics
+    - if user_signed_in?
+      .content__topics__list
+        -# = render "following_posts"
+        /= link_to 'フォロー中のツイート一覧へ', following_posts_path, {class: 'btn btn-primary withripple' }
+    - else
+      .content__topics__list
+        -# - @posts.each do |post|
+        -#   = link_to image_tag(post.image.to_s), post_path(post.id)
+        
+  //= paginate @posts
+  .content-bottom
+    .content-bottom__name
+      LANKING
+    -# .content-bottom__list
+    -#   - @all_ranks.each do |post|
+    -#     = link_to image_tag(post.image.to_s), post_path(post.id)
+
+
+.footer
+  © CAMP

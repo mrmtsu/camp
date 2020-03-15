@@ -1,0 +1,39 @@
+.content__main {
+  //background-color: white;
+  form {
+    padding-top: 148px;
+    text-align: center;
+    line-height: 50px;
+    h2 {
+      margin: 60px 0 15px 0;
+    }
+  }
+  &__image {
+    width: 50%;
+    height: 60px;
+    border: gray 2px solid;
+  }
+  &__text {
+    width: 50%;
+    margin-top: 40px;
+    border: gray 2px solid;
+  }
+  &__btn {
+    width: 100px;
+    display: inline-block;
+    border-radius: 2.8px;
+    border: gray 1px solid;
+    background-color: gray;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+    margin-bottom: 140px;
+  }
+}
+
+h3 {
+  margin-top: 80px;
+}

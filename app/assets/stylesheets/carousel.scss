@@ -1,0 +1,22 @@
+.slick-prev{
+  left: 50px;
+  height: 80px;
+  width: 80px;
+  background-image: image-url("hidari.png");
+  z-index: 100;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slick-dots {
+  bottom: 25px;
+  li button{
+    &::before{
+      height: 15px;
+      width: 15px;
+      background-color: rgb(116, 116, 116);
+      border-radius: 50%;
+    }
+  }
+}

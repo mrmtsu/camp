@@ -1,0 +1,40 @@
+.bookmark__content {
+  background-color: white;
+  max-width: 1100px;
+  margin: 0 auto 0px;
+  box-sizing: border-box;
+  &__tops {
+    width: 100%;
+    padding-top: 180px;
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: scroll;
+      height: 540px;
+      a.bookmark-image {
+        margin: 1px;
+        width: 268px;
+        height: 268px;
+        img {
+          width: 268px;
+          height: 268px;
+        }
+      }
+    }
+    h2 {
+      padding: 20px 0 60px 0;
+      text-align: center;
+      a {
+        color: gray;
+      }
+    }
+  }
+}
+
+
+// アニメーション
+// -webkit-animation: shopScroll 142s linear infinite;
+//     animation: shopScroll 142s linear infinite;
+
+// 色
+// border-bottom: 1px solid rgb(219, 7, 3);
