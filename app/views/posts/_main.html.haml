@@ -29,12 +29,14 @@
           = link_to image_tag(post.image.to_s), post_path(post.id)
         
   //= paginate @posts
-  .content-bottom
-    .content-bottom__name
-      LANKING
-    .content-bottom__list
-      - @all_ranks.each do |post|
-        = link_to image_tag(post.image.to_s), post_path(post.id)
+  -if @post.image.to_s == 0
+  -else
+    .content-bottom
+      .content-bottom__name
+        LANKING
+      .content-bottom__list
+        - @all_ranks.each do |post|
+          = link_to image_tag(post.image.to_s), post_path(post.id)
 
 
 .footer
