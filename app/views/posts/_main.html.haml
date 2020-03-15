@@ -21,7 +21,6 @@
           - @posts.each do |post|
             = link_to image_tag(post.image.to_s), post_path(post.id)
         - else
-          .content-bottom__name
           = render "following_posts"
           /= link_to 'フォロー中のツイート一覧へ', following_posts_path, {class: 'btn btn-primary withripple' }
     - else

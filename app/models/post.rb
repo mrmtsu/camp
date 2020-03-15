@@ -19,6 +19,11 @@ class Post < ApplicationRecord
     bookmarks.where(user_id: user.id).exists?
   end
 
+  def self.search(search)
+    return Post.all unless search
+    Post.where('text LIKE(?)', "%#{search}%")
+  end
+
   #DBへのコミット直前に実施する
   after_create do
     post = Post.find_by(id: self.id)
