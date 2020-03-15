@@ -82,6 +82,10 @@ class PostsController < ApplicationController
     # end
   end
 
+  def following_posts
+    @user = current_user
+    @users = @user.followings.order("created_at DESC").page(params[:page]).per(20)
+  end
   
   private
   def post_params

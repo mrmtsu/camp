@@ -35,13 +35,13 @@ class UsersController < ApplicationController
   end
 
   def follows
-    @parents = Category.all.order("id ASC").limit(2)
+    # @parents = Category.all.order("id ASC").limit(2)
     user = User.find(params[:id])
     @users = user.followings
   end
 
   def followers
-    @parents = Category.all.order("id ASC").limit(2)
+    # @parents = Category.all.order("id ASC").limit(2)
     user = User.find(params[:id])
     @users = user.followers
   end

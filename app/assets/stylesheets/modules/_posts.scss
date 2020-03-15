@@ -75,18 +75,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 30px;
+        margin-right: 20px;
         &--btn {
           color: gray;
-          position: relative;
+          text-align: center;
           .header__inner__right__search--btn__name {
             font-size: .1rem;
-            position: absolute;
-            top: 70.8%;
-            left: -6px;
-            line-height: 1.4;
-            margin-top: .1em;
-            text-align: center;
           }
         }
       }
@@ -94,87 +88,54 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 30px;
+        margin-right: 20px;
         &--btn {
           color: gray;
-          position: relative;
+          text-align: center;
           .header__inner__right__user--btn__name {
             font-size: .1rem;
-            position: absolute;
-            top: 70.8%;
-            left: 0px;
-            line-height: 1.4;
-            margin-top: .1em;
-            text-align: center;
           }
           .header__inner__right__newuser--btn__name {
             font-size: .1rem;
-            position: absolute;
-            top: 70.8%;
-            left: -9px;
-            line-height: 1.4;
-            margin-top: .1em;
-            text-align: center;
           }
         }
       }
       &__logout {
-        margin-right: 0 30px;
+        margin-right: 0 20px;
         display: flex;
         justify-content: center;
         align-items: center;
         &--btn {
           color: gray;
-          text-decoration: none;
-          position: relative;
+          text-align: center;
           .header__inner__right__logout--btn__name {
             font-size: .1rem;
-            position: absolute;
-            top: 70%;
-            left: -10px;
-            line-height: 1.4;
-            margin-top: .1em;
-            text-align: center;
           }
         }
       }
       &__new {
-        margin-right: 30px;
+        margin-right: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
         &--btn {
           color: gray;
-          text-decoration: none;
-          position: relative;
+          text-align: center;
           .header__inner__right__new--btn__name {
             font-size: .1rem;
-            position: absolute;
-            top: 70%;
-            left: -10px;
-            line-height: 1.4;
-            margin-top: .1em;
-            text-align: center;
           }
         }
       }
       &__login {
-        margin-right: 30px;
+        margin-right: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
         &--btn {
           color: gray;
-          text-decoration: none;
-          position: relative;
+          text-align: center;
           .header__inner__right__login--btn__name {
             font-size: .1rem;
-            position: absolute;
-            top: 70%;
-            left: -5px;
-            line-height: 1.4;
-            margin-top: .1em;
-            text-align: center;
           }
         }
       }
