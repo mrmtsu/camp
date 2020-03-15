@@ -12,12 +12,12 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
     #ログインしている場合（フォローしている人の投稿のみ表示）
-    # if user_signed_in?
-    #   @user = current_user
-    #   @users = @user.followings.order("created_at DESC").page(params[:page]).per(20)
-    # else
+    if user_signed_in?
+      @user = current_user
+      @users = @user.followings.order("created_at DESC").page(params[:page]).per(20)
+    else
       
-    # end
+    end
   end
 
   def new
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
     @posts = Post.includes(:user)
     @user = current_user
-    # @tag = Hashtag.find_by(hashname: params[:name])
+    @tag = Hashtag.find_by(hashname: params[:name])
     @comment    = Comment.new
     @post = Post.find(params[:id])
     # @new_history = @post.browsing_histories.new
@@ -85,6 +85,15 @@ class PostsController < ApplicationController
   def following_posts
     @user = current_user
     @users = @user.followings.order("created_at DESC").page(params[:page]).per(20)
+  end
+
+  def hashtag
+    @user = current_user
+    @tag = Hashtag.find_by(hashname: params[:name])
+    @posts = @tag.posts.build
+    @post  = @tag.posts.page(params[:page])
+    @comment    = Comment.new
+    @comments   = @posts.comments
   end
   
   private

@@ -17,10 +17,13 @@
   .content__topics
     - if user_signed_in?
       .content__topics__list
-        - @posts.each do |post|
-          = link_to image_tag(post.image.to_s), post_path(post.id)
-        -# = render "following_posts"
-        /= link_to 'フォロー中のツイート一覧へ', following_posts_path, {class: 'btn btn-primary withripple' }
+        - if @user.followings.count == 0
+          - @posts.each do |post|
+            = link_to image_tag(post.image.to_s), post_path(post.id)
+        - else
+          .content-bottom__name
+          = render "following_posts"
+          /= link_to 'フォロー中のツイート一覧へ', following_posts_path, {class: 'btn btn-primary withripple' }
     - else
       .content__topics__list
         - @posts.each do |post|

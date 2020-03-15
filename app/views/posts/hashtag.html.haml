@@ -1,0 +1,44 @@
+.wrapper
+  = render "header"
+  - provide(:text, @tag.hashname)
+  .content
+    .content__topss
+      .content__hash 
+        %h1=@tag.hashname
+        .name
+          .name_hash
+            - @post.each do |post|
+              = link_to image_tag(post.image.to_s), post_path(post.id)
+          .edit_hash
+            #follow_form
+              - if current_user.followed_by?(@user)
+                = form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }, remote: true) do |f|
+                  = f.submit "フォロー解除", class: "btn"
+              - else
+                = form_for(user_relationships_path(@user.id), remote: true) do |f|
+                  %div
+                    = hidden_field_tag :followed_id, @user.id
+                  /= f.submit "フォローする", class: "btn btn-info"
+          .fllw_hash
+            /= "投稿"
+            /= pluralize(current_user.posts.count,"件")
+            %span{:style => "margin-right:15px;"}
+              %span{:style => "margin-right:15px;"}
+              - @user ||= current_user
+              %a{:href => "#{followers_user_path(@user)}"}
+                = @current_user.name
+                フォロワー
+                = succeed "\u4EBA" do
+                  %strong#followers.stat
+                    = @user.followers.count
+              %span{:style => "margin-right: 15px;"}
+              %a{:href => "#{follows_user_path(@user)}"}
+                %strong#following.stat>
+                  /= @user.followings.count
+                /人をフォロー中
+  .row
+    .posted_content
+      .col-md-8
+        .picture_hash
+          /= render @post
+        / .picture

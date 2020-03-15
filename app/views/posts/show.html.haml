@@ -35,7 +35,7 @@
       .content__topicss__lists
         = image_tag @post.image.to_s
         //%h1= @post.text
-        -# %h1= simple_format render_with_hashtags(@post.text)
+        %h1= simple_format render_with_hashtags(@post.text)
         .list
           %h2= @post.created_at.strftime("%Y/%m/%d %H:%M") 
           %br

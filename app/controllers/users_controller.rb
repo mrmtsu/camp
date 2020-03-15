@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page]).per(20).order("created_at DESC")
     @name = @user.name
-    # @favorite_posts = @user.favorite_posts
-    # @bookmark_posts = @user.bookmark_ids
+    @favorite_posts = @user.favorite_posts
+    @bookmark_posts = @user.bookmark_ids
   end
 
   def edit
