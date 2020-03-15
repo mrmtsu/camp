@@ -1,0 +1,78 @@
+.wrapper
+  = render "header"
+  .content
+    .content__topss
+      .content__topss__text
+        = link_to @post.user.name, user_path(@post.user.id), class: "content__topss__name"
+        //= "さんの投稿"
+
+        -# = render "favorites/favorite"
+        -# - if user_signed_in?
+        -#   - if @post.bookmarked_by?(current_user) 
+        -#     / ログインしているユーザーがお気に入りしたかどうかで分岐
+        -#     %p
+        -#       //お気に入り解除
+        -#       = link_to post_bookmarks_path(@post.id), method: :delete, id: 'bookmark-link' do
+        -#         = raw bookmark_icon(@post, current_user)
+        -#   - else
+        -#     %p
+        -#       //お気に入り登録
+        -#       = link_to post_bookmarks_path(@post), method: :post, id: 'bookmark-link-to' do
+        -#         = raw bookmark_icon(@post, current_user)
+
+      //ログイン中のユーザーであれば編集・削除ページ遷移可能
+      - if user_signed_in? && current_user.id == @post.user.id
+        .menu-box--left
+          %ul
+            %li.menu-box--left__category
+              = icon('fas', 'ellipsis-h')
+              %ul.menu-box--left__parents
+                %li.menu-box--left__parents__parent
+                  = link_to '編集', edit_post_path
+                %li.menu-box--left__children
+                  = link_to '削除', post_path, method: :delete
+    .content__topicss
+      .content__topicss__lists
+        = image_tag @post.image.to_s
+        //%h1= @post.text
+        -# %h1= simple_format render_with_hashtags(@post.text)
+        .list
+          %h2= @post.created_at.strftime("%Y/%m/%d %H:%M") 
+          %br
+          -# %h3= @new_history.user_id
+          -# %h3= @all_history.count
+        
+        //コメント機能
+        .show-comment
+          %h2 <  コメント一覧  >
+          .comment
+            .comment__list
+              - if @comments
+                - @comments.each do |comment|
+                  .comment__list__form
+                    = link_to comment.user.name, "/users/#{comment.user_id}"
+                    %h4= comment.created_at.to_s(:datetime)
+                  .comment__list__text{data: {comment: {id: comment.id}}}
+                    %h3= comment.text
+
+          .show-footer
+            %h3 コメントする
+            - if current_user
+              = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
+                = form.text_area :text, placeholder: "comment", rows: "2", class: "comment__main"
+                = form.submit "SEND", style: 'padding: 10px',class: "comment__btn"
+            - else
+              %p
+                コメントの投稿には新規登録/ログインが必要です
+
+
+    .show__topss
+      %h2
+        //= @post.user.name
+        投稿一覧
+      .show__content__topic
+        - @posts.each do |post|
+          = link_to image_tag(post.image.to_s), post_path(post.id), class: "show__content__topic__image"
+
+    
+      

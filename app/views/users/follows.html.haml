@@ -1,0 +1,19 @@
+.wrapper
+  = render "posts/header"
+  .content
+    .content__topics
+      .content__follow
+        %h1 follows
+        .list
+          - @users.each do |user|
+            %p
+              = image_tag user.avatar.to_s, class: "content__tops__user__icon"
+              = link_to user.name, user_path(user.id), class: "content__follow__list__show"
+              - if current_user != user
+                - if user.followed_by?(current_user)
+                  = link_to "フォロー中", user_relationships_path(user.id), method: :delete, class: "followers__name"
+                - else
+                  = link_to "フォローする", user_relationships_path(user.id), method: :post, class: "followers__list"
+              
+        %span
+        = link_to "マイページへ戻る", user_path(current_user.id), class: "content__follow__list"

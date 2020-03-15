@@ -1,0 +1,8 @@
+%h1 お気に入り一覧
+- @users.each do |user|
+  = image_tag user.avatar.to_s, class: "content__tops__user__icon"
+  = link_to user.name, user_path(user.id), class: "content__follow__list__show"
+
+
+
+

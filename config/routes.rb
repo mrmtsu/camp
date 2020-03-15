@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :maps
   devise_for :users
   get 'relationships/create'
   get 'relationships/destroy'

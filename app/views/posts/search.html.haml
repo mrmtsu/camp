@@ -1,0 +1,14 @@
+.wrapper
+  .footer
+    = form_with(url: search_posts_path, local: true, method: :get, class: "search__form") do |form|
+      = form.text_field :keyword, placeholder: "検索", class: "search__form__input"
+      = form.submit "検索", class: "search__form__btn"
+
+  .search__content
+    .search__topics
+      - @posts.each do |post|
+        = link_to image_tag(post.image.to_s), post_path(post.id), class: "content__topic__lists a"
+          
+  .search-footer
+    = link_to "トップへ戻る", root_path, class: "search-footer__btn"
+    

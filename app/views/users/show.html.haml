@@ -1,0 +1,82 @@
+.wrapper
+  = render "posts/header"
+  .content
+    .content__tops
+      .content__tops__user
+        - if signed_in?
+          - if current_user.id == @posts.ids do
+            = link_to edit_user_path(@posts.ids), class: "content__tops__user__name"
+              = image_tag @user.avatar.to_s, class: "content__tops__user__name__icon"
+            = link_to @name, root_path(@posts.ids), class: "content__tops__user__name"
+          - else
+            -# = image_tag @user.avatar.to_s, class: "content__tops__user__name__icon"
+            = link_to @name, edit_user_path(current_user.id), class: "content__tops__user__name"
+        - else
+          = image_tag @user.avatar.to_s, class: "content__tops__user__name__icon"
+          .content__tops__user__name
+            = @name
+    
+        - if signed_in?
+          .follow
+            -# = link_to "フォロー", follows_user_path(@user.id), class: "content__tops__followings"
+            -# %h5= @user.followings.count
+            -# = link_to "フォロワー", followers_user_path(@user.id), class: "content__tops__followers"
+            -# %h5= @user.followers.count
+            -# - if current_user != @user
+            -#   - if @user.followed_by?(current_user)
+            -#     %p
+            -#     = link_to "フォロー中", user_relationships_path(@user.id), method: :delete, class: "followers__ok"
+            -#   - else
+            -#     %p
+            -#     = link_to "フォローする", user_relationships_path(@user.id), method: :post, class: "followers__list"
+        - else
+          .follow
+            .content__tops__followings フォロー
+            %h5= @user.followings.count
+            .content__tops__followers フォロワー
+            %h5= @user.followers.count
+           
+
+
+
+    %h4
+      = @name
+      さんの投稿一覧
+            
+    - if user_signed_in? && current_user.id == @user.id
+      .menu-box--left
+        %ul
+          %li.menu-box--left__category
+            = icon('fas', 'ellipsis-h')
+            %ul.menu-box--left__parents
+              %li.menu-box--left__parents__parent
+                = link_to 'お気に入り', bookmarks_index_path
+                %br
+                = link_to 'アカウント編集', edit_user_path(current_user.id)        
+    
+
+
+
+
+    .content__topic
+      .content__topic__lists--show
+        - @posts.each do |post|
+          = link_to image_tag(post.image.to_s), post_path(post.id), class: "content__topic__lists a"
+
+
+    /= paginate @posts
+
+  .footer
+    .footer__title
+      2020.02
+
+
+
+
+
+
+    
+
+
+
+    

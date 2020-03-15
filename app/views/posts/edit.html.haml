@@ -1,0 +1,11 @@
+.wrapper
+  = render "header"
+  .content
+    .content__main
+      = form_with(model: @post, local: true) do |form|
+        %h3 編集する
+        = form.text_field :image, placeholder: "Image Url", class: "content__main__image"
+        %br
+        = form.text_area :text, placeholder: "text", rows: "10", class: "content__main__text"
+        %br
+        = form.submit "SEND", style: 'padding: 10px',class: "content__main__btn"
