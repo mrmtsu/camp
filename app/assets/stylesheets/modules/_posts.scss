@@ -181,15 +181,13 @@
       display: flex;
       flex-wrap: wrap;
       align-content: stretch;
-      margin: 0 1.81% 50px 0;
-      background-color: #f2f2f2;
-      
+      margin: 40px 1.81% 50px 0;
       &__photo {
         width: 540px;
         height: 400px;
       }
       a {
-        margin: 7px 1px;
+        margin: 7px 0;
         margin-top: -5px;
         width: 49.8%;
         height: 400px;
@@ -204,6 +202,7 @@
 .contents.row {
   margin: 2px 1px 100px;
   width: 33.1%;
+  background-color: #f2f2f2;
   .name2 {
     font-size: 18px;
     a {
@@ -1103,7 +1102,10 @@ label {
   transition: .3s ease-in-out;/*滑らかに表示*/
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);/*左に隠しておく*/
+  padding: 10px;
+  font-size: 20px;
   .nav-content__post {
+    margin-bottom: 10px;
     a {
       color: black;
     }
@@ -1792,6 +1794,7 @@ label {
           text-indent:1em;
           width: 200px;
           transition: all .3s ease;
+          font-size: 40px;
         }
       }
     }
@@ -2288,7 +2291,7 @@ label {
 
   .content__topic {
     overflow: scroll;
-    height: 1200px;
+    height: 1300px;
     margin: 20px 1px 0;
     &__lists--show {
       display: flex;

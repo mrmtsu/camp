@@ -11,9 +11,13 @@
       = image_tag '/assets/new.jpg'
     %li
       = image_tag '/assets/h.jpg'
-
-
-
+  - if user_signed_in?
+    - if @user.followings.count >= 1
+      .content-bottom
+        .content-bottom__name
+          FOLLWER
+    - else
+      %h1
   .content__topics
     - if user_signed_in?
       .content__topics__list

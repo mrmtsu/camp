@@ -77,3 +77,4 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem "bootstrap-sass"
 gem 'ancestry'
 gem 'geocoder'
+gem 'impressionist'
