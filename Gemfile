@@ -41,6 +41,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+  gem 'capistrano-rails-console'
 end
 
 group :development do
@@ -78,3 +84,7 @@ gem "bootstrap-sass"
 gem 'ancestry'
 gem 'geocoder'
 gem 'impressionist'
+
+group :production do
+  gem 'unicorn'
+end
