@@ -4,7 +4,7 @@
       %h2 Edit Account
       %h5 アカウントの編集
       = link_to "ログアウト", root_path, class: 'btn'
-      = link_to "トップページに戻る", root_path, class: 'btn'
+      = link_to "マイページへ戻る", user_path(@user.id), class: 'btn'
     .account-page__inner--right.user-form
       = form_for(current_user) do |f|
         .field
@@ -20,9 +20,15 @@
         .field
           .field-label
             profile image
-            = f.label :avatar, class: 'main-bottom__text__image' do
-              = icon('fas', 'image', class: 'image-icon')
-              = f.file_field :avatar, class: 'main-bottom__text__image__file'
+            .avatar
+              - if @user.avatar.present?
+                = image_tag @user.avatar.to_s, id: "user_prev", width: "100", height: "100"
+              - else
+                = image_tag asset_path("default.jpg"), id: "user_prev"
+              = f.file_field :avatar, class: 'main-bottom__text__image__file', id: "user_img"
+              = f.label :avatar, class: 'main-bottom__text__image', for: "user_img" do
+                = icon('fas', 'image', class: 'image-icon')
+  
         .actions
           = f.submit "Update", class: 'btn'
 

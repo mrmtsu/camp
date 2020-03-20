@@ -37,3 +37,17 @@
 h3 {
   margin-top: 80px;
 }
+
+#post_image {
+  &:focus {
+    outline: 0;
+    border: 2px solid gray;
+  }
+}
+
+#post_text {
+  &:focus {
+    outline: 0;
+    border: 2px solid gray;
+  }
+}

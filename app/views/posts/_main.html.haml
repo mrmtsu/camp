@@ -4,13 +4,13 @@
 .content
   %ul.slider
     %li
-      = image_tag '/assets/a.jpg'
+      = image_tag asset_path('a.jpg')
     %li
-      = image_tag '/assets/top.jpg'
+      = image_tag asset_path('top.jpg')
     %li
-      = image_tag '/assets/new.jpg'
+      = image_tag asset_path('new.jpg')
     %li
-      = image_tag '/assets/h.jpg'
+      = image_tag asset_path('h.jpg')
   - if user_signed_in?
     - if @user.followings.count >= 1
       .content-bottom
