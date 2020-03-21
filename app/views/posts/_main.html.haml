@@ -13,15 +13,20 @@
       = image_tag asset_path('h.jpg')
 
   - if user_signed_in?
-    .content__topics
-      .content__topics__list
-        - if @user.followings.count == 0
+    - if @user.followings.count == 0
+      .content__topics
+        .content__topics__list
           - @posts[0..9].each_with_index do |post, i|
             = link_to post_path(post.id), data: { index: i += 1 } do
               = image_tag asset_path("#{post.image.to_s}")
-        - else
-          = render "following_posts"
-          /= link_to 'フォロー中のツイート一覧へ', following_posts_path, {class: 'btn btn-primary withripple' }
+    - else
+      .content__topics
+        .content__topics__list
+          .content-bottom
+            .content-bottom__name
+              FOLLWER
+            = render "following_posts"
+            /= link_to 'フォロー中のツイート一覧へ', following_posts_path, {class: 'btn btn-primary withripple' }
   - else
     .content__top
       .content__top__nosign

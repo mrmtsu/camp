@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    
+    @parents = Category.all.order("id ASC").limit(2)
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page]).per(20).order("created_at DESC")
     @name = @user.name
@@ -36,13 +36,13 @@ class UsersController < ApplicationController
   end
 
   def follows
-    # @parents = Category.all.order("id ASC").limit(2)
+    @parents = Category.all.order("id ASC").limit(2)
     user = User.find(params[:id])
     @users = user.followings
   end
 
   def followers
-    # @parents = Category.all.order("id ASC").limit(2)
+    @parents = Category.all.order("id ASC").limit(2)
     user = User.find(params[:id])
     @users = user.followers
   end

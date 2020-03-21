@@ -92,19 +92,19 @@
 
       %ul.first
         %li
-          -# - @parents.each do |parent|
-          -#   = link_to "#{parent.name}", categories_path(parent), class: "parent_category",id: "#{parent.id}"
-          -# %ul
-          -#   %li.children_list
-          -#     - @parents.each do |parent|
-          -#       - parent.children.each do |child|
-          -#         = link_to "#{child.name}", categories_path(child), class: "children_category",id: "#{child.id}"
-          -#     %ul
-          -#       %li.grand_children_list
-          -#         - @parents.each do |parent|
-          -#           - parent.children.each do |child|
-          -#             - child.children.each do |grandchild|
-          -#               = link_to "#{grandchild.name}", categories_path(grandchild), class: "grandchild_category",id: "#{grandchild.id}"
+          - @parents.each do |parent|
+            = link_to "#{parent.name}", categories_path(parent), class: "parent_category",id: "#{parent.id}"
+          %ul
+            %li.children_list
+              - @parents.each do |parent|
+                - parent.children.each do |child|
+                  = link_to "#{child.name}", categories_path(child), class: "children_category",id: "#{child.id}"
+              %ul
+                %li.grand_children_list
+                  - @parents.each do |parent|
+                    - parent.children.each do |child|
+                      - child.children.each do |grandchild|
+                        = link_to "#{grandchild.name}", categories_path(grandchild), class: "grandchild_category",id: "#{grandchild.id}"
                                 
     %li
       %a{href:""}

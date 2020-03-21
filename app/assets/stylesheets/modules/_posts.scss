@@ -231,6 +231,11 @@
     }
   }
 }
+.follow-top {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+} 
 .contents.row {
   margin: 2px 1px 1px;
   width: 33.1%;
@@ -1950,15 +1955,12 @@ a[data-index="10"] {
     &__topics {
       overflow: scroll;
       height: 700px;
-      background-color: #f2f2f2;
       &__list {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         align-content: stretch;
         margin: 0 0 0 0;
-        background-color: #f2f2f2;
-        
         &__photo {
           width: 540px;
           height: 400px;
@@ -1979,12 +1981,22 @@ a[data-index="10"] {
       }
     }
   }
+  .follow-top {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    width: 72%;
+  }
+  .content__follow {
+    width: 100%;
+    background-color: white;
+  }
   .contents.row {
-    margin: 2px 1px 100px;
+    margin: 2px 1px 1px;
     width: 33%;
     .name1 {
       width: 100%;
-      height: 300px;
+      height: 200px;
     }
     .name2 {
       font-size: 18px;
