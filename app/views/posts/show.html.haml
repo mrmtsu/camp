@@ -54,16 +54,19 @@
                     %h4= comment.created_at.to_s(:datetime)
                   .comment__list__text{data: {comment: {id: comment.id}}}
                     %h3= comment.text
+                    -# = link_to '削除', post_path, method: :delete
 
           .show-footer
-            %h3 コメントする
             - if current_user
+              %h3 コメントする
               = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
                 = form.text_area :text, placeholder: "comment", rows: "2", class: "comment__main"
                 = form.submit "SEND", style: 'padding: 10px',class: "comment__btn"
             - else
-              %p
-                コメントの投稿には新規登録/ログインが必要です
+              .show-footer__list
+                %p  コメントの投稿には
+                = link_to "新規登録 / ログイン", new_user_registration_path
+                %p  が必要です
 
 
     .show__topss
@@ -72,7 +75,8 @@
         投稿一覧
       .show__content__topic
         - @posts.each do |post|
-          = link_to image_tag(post.image.to_s), post_path(post.id), class: "show__content__topic__image"
+          = link_to post_path(post.id), class: "show__content__topic__image" do
+            = image_tag(post.image.to_s)
 
     
       

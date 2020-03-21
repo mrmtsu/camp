@@ -2,7 +2,9 @@
   - @posts = Post.where(user_id: user.id).limit(30).order("created_at DESC")
   - @posts.each do |post|
     .contents.row
-      .name1= link_to image_tag(post.image.to_s), post_path(post.id)
+      .name1
+        = link_to post_path(post.id) do
+          = image_tag(post.image.to_s)
       .name2
         #{link_to user.name, user_path(user), method: :get}
       = simple_format render_with_hashtags(post.text.slice(0...8) + "..."), class: "name3"

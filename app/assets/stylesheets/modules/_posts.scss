@@ -173,24 +173,53 @@
     }
   }
   &__topics {
-    overflow: scroll;
+    overflow-y: auto;
     height: 900px;
     &__list {
       width: 100%;
       max-width: 1100px;
       display: flex;
-      flex-wrap: wrap;
       align-content: stretch;
       margin: 40px 1.81% 50px 0;
+      flex-wrap: wrap;
+      position: relative;
       &__photo {
         width: 540px;
         height: 400px;
       }
       a {
-        margin: 7px auto;
+        margin: 0 0 1px 1px;
         margin-top: -5px;
-        width: 49.8%;
+        width: 26%;
+        height: 299.5px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  &__top {
+    &__nosign {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      align-content: stretch;
+      margin: 40px 1.81% 50px 0;
+      flex-wrap: wrap;
+      position: relative;
+      &__photo {
+        width: 540px;
         height: 400px;
+      }
+      a {
+        margin: 0 0 1px 1px;
+        margin-top: -5px;
+        width: 26%;
+        height: 299.5px;
       }
       img {
         width: 100%;
@@ -203,7 +232,7 @@
   }
 }
 .contents.row {
-  margin: 2px 1px 100px;
+  margin: 2px 1px 1px;
   width: 33.1%;
   background-color: #f2f2f2;
   .name2 {
@@ -408,6 +437,9 @@ a.followers__list {
       margin: 1px;
       width: 100%;
       height: 100%;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }
@@ -597,6 +629,14 @@ h6 {
 .show-footer {
   box-sizing: border-box;
   text-align: center;
+  &__list {
+    margin: auto;
+    a {
+      text-decoration: none;
+      color: #527ddbd2;
+      font-size: 16px;
+    }
+  }
   #new_comment {
     display: flex;
     justify-content: center;
@@ -627,13 +667,16 @@ h6 {
     height: 800px;
     a.show__content__topic__image {
       width: 24.8%;
-      height: 24.8%;
+      height: 33%;
       margin: 1px;
     }
     img {
       width: 100%;
       height: 100%;
       margin: 1px;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }
@@ -694,6 +737,9 @@ h6 {
     img {
       width: 100%;
       height: 100%;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
   &__lists.a {
@@ -797,13 +843,48 @@ label {
 }
 
 
+a[data-index="1"], a[data-index="7"] {
+  margin-top: 1px;
+}
 
+a[data-index="4"] {
+  position: absolute;
+  bottom: 602px;
+}
 
+a[data-index="2"], a[data-index="8"] {
+  margin-top: 1px;
+}
 
+a[data-index="5"] {
+  position: absolute;
+  bottom: 602px;
+  left: 287px;
+}
 
+a[data-index="3"] {
+  margin-top: 1px;
+  width: 47.7%;
+  height: 600px;
+}
 
+a[data-index="6"] {
+  margin-top: 1px;
+  width: 47.7%;
+  height: 600px;
+}
 
+a[data-index="9"] {
+  position: absolute;
+  bottom: 0px;
+  right: 287px;
+}
 
+a[data-index="10"] {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
 
 
 
@@ -1371,6 +1452,9 @@ label {
         width: 90%;
         height: 300px;
         margin: auto;
+        &:hover {
+          opacity: 0.7;
+        }
       }
       h1 {
         width: 100%;
@@ -1520,6 +1604,9 @@ label {
         width: 100%;
         height: 100%;
         margin: 1px;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -1672,6 +1759,9 @@ label {
         margin: 1px;
         width: 100%;
         height: 100%;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -1733,6 +1823,9 @@ label {
       img {
         width: 100%;
         height: 100%;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
     &__lists.a {
@@ -1846,6 +1939,9 @@ label {
       img {
         width: 100%;
         height: 580px;
+        &:hover {
+          opacity: 0.7;
+        }
       }
       .content__top {
         width: 100%;
@@ -1876,6 +1972,9 @@ label {
         img {
           width: 100%;
           height: 100%;
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
     }
@@ -1930,6 +2029,9 @@ label {
       width: 100%;
       height: 500px;
       margin-bottom: 50px;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
   .footer {
@@ -2024,6 +2126,9 @@ label {
         width: 700px;
         height: 400px;
         margin: auto;
+        &:hover {
+          opacity: 0.7;
+        }
       }
       h1 {
         width: 700px;
@@ -2170,6 +2275,9 @@ label {
         width: 100%;
         height: 100%;
         margin: 1px;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -2313,6 +2421,9 @@ label {
         margin: 1px;
         width: 100%;
         height: 100%;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -2368,6 +2479,9 @@ label {
       img {
         width: 100%;
         height: 100%;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
     &__lists.a {
@@ -2407,6 +2521,9 @@ label {
         img {
           width: 100%;
           height: 100%;
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
     }

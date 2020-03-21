@@ -5,7 +5,8 @@
       %h2=link_to "お気に入り一覧", user_path(current_user.id)
       .bookmark__content__tops__list
         - @bookmarks.each do |bookmark|
-          = link_to image_tag(bookmark.post.image), post_path(bookmark.post_id), class: "bookmark-image"
+          = link_to post_path(bookmark.post_id), class: "bookmark-image" do
+            = image_tag(bookmark.post.image)
           
 
 

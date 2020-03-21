@@ -12,6 +12,9 @@
     width: 200px;
     height: 200px;
     margin: 1px;
+    &:hover {
+      opacity: 0.7;
+    }
   }
   .name {
     overflow: scroll;

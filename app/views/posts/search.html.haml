@@ -10,7 +10,8 @@
   .search__content
     .search__topics
       - @posts.each do |post|
-        = link_to image_tag(post.image.to_s), post_path(post.id), class: "content__topic__lists a"
+        = link_to post_path(post.id), class: "content__topic__lists a" do
+          = image_tag(post.image.to_s)
           
   .search-footer
     = link_to "トップへ戻る", root_path, class: "search-footer__btn"

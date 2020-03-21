@@ -31,6 +31,24 @@
     transition: .3s;
     cursor: pointer;
     margin-bottom: 140px;
+    &:hover{
+      font-size: bold;
+      -webkit-box-shadow:inset 0px 0px 3px #fff;
+      -moz-box-shadow:inset 0px 0px 3px #fff;
+      box-shadow:inset 0px 0px 3px #fff;
+    }
+    &:active{
+      border:1px solid #586169;
+      background-color: gray;
+      color:#e0ebf5;
+      -webkit-box-shadow:inset 0px 0px 8px #404244;
+      -moz-box-shadow:inset 0px 0px 2px #a3aab1;
+      box-shadow:inset 0px 0px 2px #959ca3;
+    }
+    &:focus {
+      outline: 0;
+      border: 2px solid gray;
+    }
   }
 }
 
@@ -41,13 +59,13 @@ h3 {
 #post_image {
   &:focus {
     outline: 0;
-    border: 2px solid gray;
+    border: 4px solid gray;
   }
 }
 
 #post_text {
   &:focus {
     outline: 0;
-    border: 2px solid gray;
+    border: 4px solid gray;
   }
 }

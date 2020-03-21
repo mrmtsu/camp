@@ -11,36 +11,34 @@
       = image_tag asset_path('new.jpg')
     %li
       = image_tag asset_path('h.jpg')
+
   - if user_signed_in?
-    - if @user.followings.count >= 1
-      .content-bottom
-        .content-bottom__name
-          FOLLWER
-    - else
-      %h1
-  .content__topics
-    - if user_signed_in?
+    .content__topics
       .content__topics__list
         - if @user.followings.count == 0
-          - @posts.each do |post|
-            = link_to image_tag(post.image.to_s), post_path(post.id)
+          - @posts[0..9].each_with_index do |post, i|
+            = link_to post_path(post.id), data: { index: i += 1 } do
+              = image_tag asset_path("#{post.image.to_s}")
         - else
           = render "following_posts"
           /= link_to 'フォロー中のツイート一覧へ', following_posts_path, {class: 'btn btn-primary withripple' }
-    - else
-      .content__topics__list
-        - @posts.each do |post|
-          = link_to image_tag(post.image.to_s), post_path(post.id)
+  - else
+    .content__top
+      .content__top__nosign
+        - @posts[0..9].each_with_index do |post, i|
+          = link_to post_path(post.id), data: { index: i += 1 } do
+            = image_tag asset_path("#{post.image.to_s}")
         
-  //= paginate @posts
+  -# = paginate @posts
   -if @post.image.to_s == 0
   -else
     .content-bottom
       .content-bottom__name
         LANKING
       .content-bottom__list
-        - @all_ranks.each do |post|
-          = link_to image_tag(post.image.to_s), post_path(post.id)
+        - @all_ranks.each_with_index do |post, i|
+          = link_to post_path(post.id), data: { index: i += 1 } do
+            = image_tag asset_path("#{post.image.to_s}")
 
 
 .footer

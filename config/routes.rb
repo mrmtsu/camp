@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     end
     resource :bookmarks, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
     namespace :api do
       resources :comments, only: :index, defaults: { format: 'json' }
     end

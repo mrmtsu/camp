@@ -7,6 +7,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find(comment_params)
+    comment.destroy
+  end
+
   #def create
     #@comment = Comment.new(comment_params)
     #@post = @comment.post

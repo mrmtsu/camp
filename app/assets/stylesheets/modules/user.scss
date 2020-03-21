@@ -70,6 +70,10 @@
         padding: 1px;
         letter-spacing: 1px;
         border-radius: 6px;
+        &:focus {
+          outline: 0;
+          border: 2px solid gray;
+        }
       }
     }
   }
@@ -91,6 +95,8 @@
     color: #fff;
     background-color: #38aef0;
     font-size: 15px;
+    outline: 0;
+    border: 2px solid #38aef0;
   }
 
   .field-label {
@@ -160,5 +166,7 @@ i.fas.fa-image.image-icon {
 #user_prev {
   border-radius: 50px;
   margin-right: 30px;
+  width: 100px;
+  height: 100px;
 }
 
