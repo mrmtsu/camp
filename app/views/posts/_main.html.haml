@@ -16,7 +16,7 @@
     - if @user.followings.count == 0
       .content__topics
         .content__topics__list
-          - @posts[0..9].each_with_index do |post, i|
+          - @posts[0..13].each_with_index do |post, i|
             = link_to post_path(post.id), data: { index: i += 1 } do
               = image_tag asset_path("#{post.image.to_s}")
     - else
@@ -30,9 +30,19 @@
   - else
     .content__top
       .content__top__nosign
-        - @posts[0..9].each_with_index do |post, i|
+        - @posts[0..4].each_with_index do |post, i|
           = link_to post_path(post.id), data: { index: i += 1 } do
             = image_tag asset_path("#{post.image.to_s}")
+      - if @posts[5].present?
+        .content__top__nosign
+          - @posts[5..8].each_with_index do |post, i|
+            = link_to post_path(post.id), data: { index: i += 6 } do
+              = image_tag asset_path("#{post.image.to_s}")
+      - if @posts[9].present?
+        .content__top__nosign
+          - @posts[9..13].each_with_index do |post, i|
+            = link_to post_path(post.id), data: { index: i += 10 } do
+              = image_tag asset_path("#{post.image.to_s}")
         
   -# = paginate @posts
   -if @post.image.to_s == 0
