@@ -4,4 +4,4 @@
     .content__destroy__main
       %h2 削除完了しました。
       %br
-      = link_to '投稿一覧へ戻る', root_path, style: 'padding: 10px',class: "content__main__btn__destroy"
+      = link_to 'マイページへ戻る', user_path(current_user.id), style: 'padding: 10px',class: "content__main__btn__destroy"

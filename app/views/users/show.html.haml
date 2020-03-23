@@ -61,7 +61,8 @@
     .content__topic
       .content__topic__lists--show
         - @posts.each do |post|
-          = link_to image_tag(post.image.to_s), post_path(post.id), class: "content__topic__lists a"
+          = link_to post_path(post.id), class: "content__topic__lists a" do
+            = image_tag asset_path(post.image.to_s)
 
 
     /= paginate @posts

@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to root_path
+      redirect_to user_path(@post.user_id)
     else
       redirect_back(fallback_location: root_path)
     end
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update(post_params)
-    redirect_to root_path
+    redirect_to user_path(current_user.id)
   end
 
   def show

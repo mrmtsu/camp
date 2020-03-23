@@ -5,9 +5,11 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorites_users, through: :favorites, source: :post
 
-  has_many :bookmarks
+  has_many :bookmarks, dependent: :destroy
 
   has_and_belongs_to_many :hashtags
+
+  mount_uploader :image, ImagesUploader
 
   validates :text, presence: true
 

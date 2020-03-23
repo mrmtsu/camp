@@ -4,8 +4,10 @@
     .content__main
       
       = form_with(model: @post, local: true) do |form|
-        %h2 投稿する
-        = form.text_field :image, placeholder: "Image Url", class: "content__main__image", required: ""
+        = form.file_field :image, id: "new-image", required: ""
+        %label{for: "new-image", class: "new-post"}
+          %pre.fas.fa-camera
+            %p.new-post__font new post !
         %br
         = form.text_area :text, placeholder: "text", rows: "10", class: "content__main__text", required: ""
         %br
