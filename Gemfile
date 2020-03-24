@@ -84,6 +84,7 @@ gem "bootstrap-sass"
 gem 'ancestry'
 gem 'geocoder'
 gem 'impressionist'
+gem 'photoswipe-rails'
 
 group :production do
   gem 'unicorn'

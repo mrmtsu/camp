@@ -11,6 +11,8 @@
       = image_tag asset_path('new.jpg')
     %li
       = image_tag asset_path('h.jpg')
+    %li
+      = image_tag asset_path('aa.jpg')
 
   - if user_signed_in?
     - if @user.followings.count == 0

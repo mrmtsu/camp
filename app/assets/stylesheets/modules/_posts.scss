@@ -609,6 +609,11 @@ h6 {
       height: 400px;
       margin: auto;
     }
+    .prev-image {
+      width: 700px;
+      height: 400px;
+      margin: auto;
+    }
     h1 {
       width: 700px;
       font-size: 20px;
@@ -937,9 +942,6 @@ label {
   left: 0;
   cursor: pointer;
 }
-#user_avatar {
-  //display: none;
-}
 
 
 a[data-index="1"],a[data-index="11"],a[data-index="12"] {
@@ -1019,9 +1021,6 @@ a[data-index="14"] {
       margin-right: 4px;
     }
     ul {
-      .menu-box--left__parents {
-        
-      }
       li.menu-box--left__category {
         font-weight: bold;
         font-size:14px;

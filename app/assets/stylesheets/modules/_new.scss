@@ -1,5 +1,4 @@
 .content__main {
-  //background-color: white;
   form {
     padding-top: 148px;
     text-align: center;
@@ -17,6 +16,7 @@
   &__text {
     width: 50%;
     border: gray 2px solid;
+    border-radius: 10px;
   }
   &__btn {
     width: 100px;
@@ -72,13 +72,10 @@ h3 {
 
 #new-image {
   display: none;
+  position: relative;
 }
 
-.new-post {
-  font-size: 20px;
-  justify-content: center;
-  margin-top: 100px;
-}
+
 
 .fas.fa-camera {
   width: 50px;
@@ -112,7 +109,7 @@ h3 {
 .image-list {
   display: flex;
   justify-content: center;
-  margin: 50px auto 30px;
+  margin: 100px 30px 60px;
 }
 
 .edit-post {
@@ -120,4 +117,12 @@ h3 {
   align-items: flex-end;
   padding: 0;
   margin-left: 15px;
+}
+
+.prevew-image {
+  margin: 0 30px 0;
+}
+
+.fas.fa-camera {
+  margin: auto 20px;
 }

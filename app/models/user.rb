@@ -20,7 +20,8 @@ class User < ApplicationRecord
   
   mount_uploader :avatar, AvatarUploader
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true, length: { maximum: 8 }
+  
 
   def already_favorited?(post)
     self.favorites.exists?(post_id: post.id)

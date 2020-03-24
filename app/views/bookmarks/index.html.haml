@@ -6,7 +6,7 @@
       .bookmark__content__tops__list
         - @bookmarks.each do |bookmark|
           = link_to post_path(bookmark.post_id), class: "bookmark-image" do
-            = image_tag(bookmark.post.image)
+            = image_tag asset_path(bookmark.post.image)
           
 
 

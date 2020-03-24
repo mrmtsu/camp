@@ -33,7 +33,9 @@
                   = link_to '削除', post_path, method: :delete
     .content__topicss
       .content__topicss__lists
-        = image_tag @post.image.to_s
+        -# = image_tag asset_path(@post.image.to_s)
+        %a{"data-lightbox" => "group", :href => asset_path(@post.image.to_s), class: "prev-image"}
+          %img{:src => asset_path(@post.image.to_s), :width => "300"}
         //%h1= @post.text
         %h1= simple_format render_with_hashtags(@post.text)
         .list
