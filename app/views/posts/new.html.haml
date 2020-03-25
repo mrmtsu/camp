@@ -12,7 +12,10 @@
             %pre.fas.fa-camera
               %p.new-post__font new post !
         .image-text
-          = form.text_area :text, placeholder: "text", rows: "10", class: "content__main__text", required: ""
+          = form.label :address, class: "new-label"
+          = form.text_field :address, placeholder: " ex ) キャンプ場", class: "content__main__text"
+          = form.label :text, class: "new-label"
+          = form.text_area :text, rows: "10", class: "content__main__text", required: ""
           %br
           = form.submit "SEND", style: 'padding: 10px',class: "content__main__btn"
         

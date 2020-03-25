@@ -12,7 +12,6 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  //height: 280vh;
 }
 .header {
   width: 100%;
@@ -613,6 +612,9 @@ h6 {
       width: 700px;
       height: 400px;
       margin: auto;
+      &:hover {
+        opacity: 0.9;
+      }
     }
     h1 {
       width: 700px;
@@ -624,12 +626,14 @@ h6 {
     .list {
       font-size: 10px;
       padding-left: 600px;
+      display: grid;
     }
   }
   a {
     text-decoration: none;
     color: #527ddbd2;
     font-size: 12px;
+    text-align: center;
     i.fa.fa-bookmark.fa-bookmark-o {
       color: #9b929241;
     }
@@ -944,7 +948,7 @@ label {
 }
 
 
-a[data-index="1"],a[data-index="11"],a[data-index="12"] {
+a[data-index="1"],a[data-index="11"] {
   margin-top: 1px;
   width: 25.27%;
 }
@@ -989,23 +993,48 @@ a[data-index="10"] {
   height: 600px;
 }
 
+a[data-index="11"] {
+  position: relative;
+  margin-top: 1px;
+  width: 25.27%;
+}
+
+a[data-index="12"] {
+  position: absolute;
+  right: 0;
+  margin-top: 1px;
+  width: 23.8%;
+}
+
 a[data-index="13"] {
+  width: 25.27%;
   position: absolute;
   bottom: 0;
-  left: 526px;
+  left: 558px;
 }
 
 a[data-index="14"] {
+  width: 23.8%;
   position: absolute;
+  right: 0;
   bottom: 0;
-  left: 813px;
 }
 
 
 
+#map {
+  margin: 10px auto;
+  height: 500px;
+  width: 90%;
+}
 
+.address-name {
+  margin: 50px auto;
+}
 
-
+.address-image {
+  margin: 80px auto;
+}
 
 
 
@@ -2452,7 +2481,7 @@ a[data-index="14"] {
       height: 1200px;
       a.show__content__topic__image {
         width: 33.1%;
-        height: 30%;
+        height: 33.1%;
         margin: 1px;
       }
       img {

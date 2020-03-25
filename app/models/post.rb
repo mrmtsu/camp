@@ -9,8 +9,12 @@ class Post < ApplicationRecord
 
   has_and_belongs_to_many :hashtags
 
+  geocoded_by :address
+  after_validation :geocode
+
   mount_uploader :image, ImagesUploader
 
+  validates :image, presence: true
   validates :text, presence: true
 
   def favorited_by?(user)
@@ -46,5 +50,4 @@ class Post < ApplicationRecord
       post.hashtags << tag
     end
   end
-  
 end

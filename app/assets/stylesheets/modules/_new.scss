@@ -16,7 +16,7 @@
   &__text {
     width: 50%;
     border: gray 2px solid;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   &__btn {
     width: 100px;
@@ -101,6 +101,12 @@ h3 {
   }
 }
 
+.new-label {
+  padding: 0;
+  display: grid;
+  margin-top: 20px;
+}
+
 
 
 
@@ -109,7 +115,7 @@ h3 {
 .image-list {
   display: flex;
   justify-content: center;
-  margin: 100px 30px 60px;
+  margin: 50px 30px 60px;
 }
 
 .edit-post {

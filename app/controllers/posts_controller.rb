@@ -95,10 +95,14 @@ class PostsController < ApplicationController
     @comment    = Comment.new
     @comments   = @posts.comments
   end
+
+  def map
+    @post = Post.find(params[:id])
+  end
   
   private
   def post_params
-    params.require(:post).permit(:image, :text).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :text, :address, :latitude, :longitude).merge(user_id: current_user.id)
   end
 
   def set_tweet

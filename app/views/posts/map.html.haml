@@ -1,0 +1,43 @@
+.wrapper
+  = render "header"
+  .content
+    .content__topss
+      .address-name= @post.address
+
+
+      #map
+
+        = javascript_include_tag src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=#{Rails.application.credentials.google_map_api}&libraries=places&callback=initMap", async: true, defer: true
+
+        :javascript
+          function initMap() {
+            var test ={ lat: #{@post.latitude}, lng: #{@post.longitude} };
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15,
+              center: test
+            });
+            var transitLayer = new google.maps.TransitLayer();
+            transitLayer.setMap(map);
+
+            var contentString = "住所：#{@post.address} ";
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
+
+            var marker = new google.maps.Marker({
+              position:test,
+              map: map,
+              title: contentString
+            });
+
+            marker.addListener('click', function() {
+              infowindow.open(map, marker);
+            });
+          }
+      
+      -# - @post.image.each do |post|
+      = image_tag asset_path(@post.image), class: "address-image"
+      
+  = link_to "前のページへ戻る", :back, class: "search-footer__btn"
+  .footer
+    © CAMP
