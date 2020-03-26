@@ -5,7 +5,7 @@
       = form_with(model: @post, local: true) do |form|
         .image-list
           = image_tag asset_path(@post.image.to_s), width: "200", height: "200", class: "image-box"
-          = form.file_field :image, id: "new-image", required: ""
+          = form.file_field :image, id: "new-image"
           %label{for: "new-image", class: "edit-post"}
             %pre.fas.fa-camera
               %p.new-post__font
