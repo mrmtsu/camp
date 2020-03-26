@@ -7,7 +7,8 @@
 
       #map
 
-        = javascript_include_tag src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=#{Rails.application.credentials.google_map_api}&libraries=places&callback=initMap", async: true, defer: true
+        -# = javascript_include_tag src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=#{Rails.application.credentials.google_map_api}&libraries=places&callback=initMap", async: true, defer: true
+        = javascript_include_tag src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=#{ENV['GOOGLE_MAP_API']}&libraries=places&callback=initMap", async: true, defer: true
 
         :javascript
           function initMap() {
