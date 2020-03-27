@@ -10,7 +10,7 @@
     %li
       = image_tag asset_path('new.jpg')
     %li
-      = image_tag asset_path('h.jpg')
+      = image_tag asset_path('aaa.jpg')
     %li
       = image_tag asset_path('aa.jpg')
 
@@ -22,11 +22,12 @@
             = link_to post_path(post.id), data: { index: i += 1 } do
               = image_tag asset_path("#{post.image.to_s}")
     - else
+      .content-bottom
+        .content-bottom__name
+          FOLLWER
       .content__topics
         .content__topics__list
           .content-bottom
-            .content-bottom__name
-              FOLLWER
             = render "following_posts"
             /= link_to 'フォロー中のツイート一覧へ', following_posts_path, {class: 'btn btn-primary withripple' }
   - else

@@ -4,6 +4,7 @@ $(function(){
 
   function buildHTML(comment){
     var html = `<div class="comment__list__form">
+                  <img class="cooment-avatar" src="${comment.user_avatar}">
                   <a href=/users/${comment.user_id}>${comment.user_name}</a>
                   <h4>${comment.created_at}</h4>
                 </div>
