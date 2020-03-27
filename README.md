@@ -6,23 +6,16 @@ application up and running.
 Things you may want to cover:
 
 # TITLE
-* CANP
+CANP
 
 # OVERVIEW
 - 新規登録、ログイン
-<br>
 - 画像投稿
-<br>
 - コメント
-<br>
 - 検索（投稿）
-<br>
 - いいね
-<br>
 - フォロー
-<br>
 - お気に入り
-<br>
 - 位置情報（google map)
 
 # ID
@@ -33,9 +26,9 @@ Things you may want to cover:
 - キャンプの情報を発信している人を見つける・発見するのが手間。
 - 雑誌だと約１ヶ月ごとにしか情報を得られない。（バックグランドもあまり書店に置いていない）
 - キャンプに関するサイトが実際にあるが、サイトを開くとおすすめ商品がいきなり出て来るため、見るきにならない。
-  <%br>
+  <br>
   ↑↑
-  <%br>
+  <br>
 - キャンプをしている人が実際にどんな感じで行なっているか写真で投稿するアプリ
 - キャンプに関する情報を一つに集約
 - ユーザーが自由に投稿でき、自由に閲覧することができ、どのようにキャンプをしているのか参考になる。（古い記事をいつでも見ることができる）
@@ -50,7 +43,7 @@ Things you may want to cover:
 
 
 * Ruby version
-- 2.5.1
+2.5.1
 * System dependencies
 
 * Configuration
@@ -84,6 +77,9 @@ Things you may want to cover:
 |image|text||
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
+|address|string||
+|latitude|float||
+|longitude|float||
 ### Association
 - belongs_to :user
 - has_many :comments
@@ -92,6 +88,60 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :user
+
+## relationshipsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :user
+
+## hashtags_postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :user
+
+## hashtagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :user
+
+## favoritesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :user
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :user
+
+## bookmarksテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |post_id|integer|null: false, foreign_key: true|
 ### Association
