@@ -62,10 +62,10 @@
     .content__topic
       .content__topic__lists--show
         - @posts.each do |post|
-          -# = link_to post_path(post.id), class: "content__topic__lists a" do
-          -#   = image_tag asset_path(post.image.to_s)
-          %a{"data-lightbox" => "group", :href => asset_path(post.image.to_s), class: "prev-image"}
-            %img{:src => asset_path(post.image.to_s), :width => "300"}
+          = link_to post_path(post.id), class: "content__topic__lists a" do
+            = image_tag asset_path(post.image.to_s)
+          -# %a{"data-lightbox" => "group", :href => asset_path(post.image.to_s), class: "prev-image"}
+          -#   %img{:src => asset_path(post.image.to_s), :width => "300"}
 
 
     /= paginate @posts

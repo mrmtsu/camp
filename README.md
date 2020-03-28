@@ -12,7 +12,7 @@ CANP
 - 新規登録、ログイン
 - 画像投稿
 - コメント
-- 検索（投稿）
+- 検索（投稿画像）
 - いいね
 - フォロー
 - お気に入り
@@ -29,16 +29,16 @@ CANP
   <br>
   ↑↑
   <br>
-- キャンプをしている人が実際にどんな感じで行なっているか写真で投稿するアプリ
+- キャンプをしている人が実際にどんな感じで行なっているか写真を投稿するアプリ
 - キャンプに関する情報を一つに集約
-- ユーザーが自由に投稿でき、自由に閲覧することができ、どのようにキャンプをしているのか参考になる。（古い記事をいつでも見ることができる）
-- ユーザー投稿がメインのため、企業の押し付け感がなく信用性が上がる。
+- ユーザーが自由に投稿、閲覧でき、どのようにキャンプをしているのか参考になる。（古い投稿もいつでも見ることができる）
+- ユーザー投稿が主体のアプリとなるため、企業の押し付け感がなく信用性が上がる。
 
 # DEMO
 - 
 
 # INGENUITY
-- 条件分岐を用いたこと。ログインしているユーザー、フォローをすることでそれぞれブラウザに上がってくる情報を変更しました。
+- 条件分岐を用いたこと。ログインしているユーザー、フォローをすることでそれぞれブラウザに上がってくる情報を変更した点。
 - viewの統一感
 
 
@@ -70,13 +70,16 @@ CANP
 ### Association
 - has_many :posts
 - has_many :comments
+- has_many :favorites
+- has_many :bookmarks
+
 
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
 |text|text||
-|user_id|integer|null: false, foreign_key: true|
+|user|references|foreign_key: true|
 |address|string||
 |latitude|float||
 |longitude|float||
@@ -88,8 +91,8 @@ CANP
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
+|user|references|foreign_key: true|
+|post|references|foreign_key: true|
 ### Association
 - belongs_to :post
 - belongs_to :user
@@ -106,26 +109,24 @@ CANP
 ## hashtags_postsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
+|post_id|integer||
+|hashtag_id|integer||
 ### Association
 - belongs_to :post
-- belongs_to :user
+- belongs_to :hashtag
 
 ## hashtagsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
+|hashname|string||
 ### Association
-- belongs_to :post
-- belongs_to :user
+- belongs_to :hashtags_post
 
 ## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
+|user|references|null: false|
+|post|references|null: false|
 ### Association
 - belongs_to :post
 - belongs_to :user
@@ -133,17 +134,15 @@ CANP
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+|ancestry|string||
 ### Association
-- belongs_to :post
-- belongs_to :user
 
 ## bookmarksテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
+|user|references|foreign_key: true|
+|post|references|foreign_key: true|
 ### Association
 - belongs_to :post
 - belongs_to :user

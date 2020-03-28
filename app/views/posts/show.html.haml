@@ -65,9 +65,9 @@
 
           .show-footer
             - if current_user
-              %h3 コメントする
+              %h3 cooment
               = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
-                = form.text_area :text, placeholder: "comment", rows: "2", class: "comment__main"
+                = form.text_area :text, rows: "2", class: "comment__main"
                 = form.submit "SEND", style: 'padding: 10px',class: "comment__bt", id: "comment-send"
                 %label{for: "comment-send"}
                   .comment__btn= icon('fas', 'paper-plane')

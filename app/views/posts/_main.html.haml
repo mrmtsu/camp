@@ -3,16 +3,16 @@
 
 .content
   %ul.slider
-    %li
-      = image_tag asset_path('a.jpg')
-    %li
-      = image_tag asset_path('top.jpg')
-    %li
-      = image_tag asset_path('new.jpg')
-    %li
-      = image_tag asset_path('aaa.jpg')
+    -# %li
+    -#   = image_tag asset_path('a.jpg')
+    -# %li
+    -#   = image_tag asset_path('top.jpg')
+    -# %li
+    -#   = image_tag asset_path('new.jpg')
     %li
       = image_tag asset_path('aa.jpg')
+    %li
+      = image_tag asset_path('aaa.jpg')
 
   - if user_signed_in?
     - if @user.followings.count == 0
