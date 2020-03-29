@@ -36,7 +36,7 @@ CANP
 - ユーザー投稿が主体のアプリとなるため、企業の押し付け感がなく情報の信用性が上がる。
 
 # DEMO
-- https://user-images.githubusercontent.com/60598010/77820402-72aeac00-7125-11ea-80cd-e33b2cf60327.png
+- ![image](https://user-images.githubusercontent.com/60598010/77853499-5bec8000-721f-11ea-82a5-c9e49523fe62.png)
 
 # INGENUITY
 - 条件分岐を用いたこと。ログインしているユーザー、フォローをすることでそれぞれブラウザに上がってくる情報を変更した点。

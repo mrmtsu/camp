@@ -6,6 +6,18 @@
   font-family: Hiragino Kaku Gothic ProN,ヒラギノ角ゴ ProN W3,arial,YuGothic,游ゴシック,Meiryo,メイリオ,sans-serif;
 }
 
+#bg-video {
+  position:fixed;
+  top: 0;
+  right:0;
+  bottom:0;
+  min-width:100%;
+  min-height:100%;
+  width:auto;
+  height:auto;
+  z-index:-1;
+}
+
 .wrapper {
   background-color: white;
   -webkit-background-size: cover;
@@ -2210,7 +2222,7 @@ a[data-index="14"] {
     flex-wrap: wrap;
     position: relative;
     padding: 0 10px;
-    a[data-index="1"],a[data-index="2"],a[data-index="11"],a[data-index="12"] {
+    a[data-index="1"],a[data-index="2"] {
       margin-top: 1px;
       width: 30%;
     }
@@ -2249,6 +2261,18 @@ a[data-index="14"] {
       width: 39.6%;
       height: 600px;
     }
+
+    a[data-index="11"] {
+      margin-top: 1px;
+      width: 288px;
+    }
+
+    a[data-index="12"] {
+      margin-top: 1px;
+      width: 288px;
+      position: absolute;
+      right: 10px;
+    }
     
     a[data-index="13"] {
       width: 288px;
@@ -2272,7 +2296,8 @@ a[data-index="14"] {
     padding: 20px 200px;
     width: 100vw;
     background-color: gray;
-    //height: 20vh;
+    position: fixed;
+    bottom: 0;
     .search__form {
       display: flex;
       margin-left: 250px;
@@ -2401,8 +2426,8 @@ a[data-index="14"] {
     text-align: center;
     padding-top: 10px;
     overflow: scroll;
-    height: 400px;
-    width: 500px;
+    height: 500px;
+    width: 700px;
     form {
       background-color: #f2f2f2;
     }
@@ -2665,7 +2690,7 @@ a[data-index="14"] {
 
   .content__topic {
     overflow: scroll;
-    height: 1300px;
+    height: 1700px;
     margin: 20px 1px 0;
     &__lists--show {
       display: flex;
@@ -2719,11 +2744,10 @@ a[data-index="14"] {
     max-width: 1100px;
     margin: 100px auto 0px;
     box-sizing: border-box;
-    height: 100vh;
   }
   .search__topics {
     overflow: scroll;
-    height: 85%;
+    height: 1000px;
     flex-wrap: wrap;
     display: flex;
     .content__topic__lists {
@@ -2734,7 +2758,7 @@ a[data-index="14"] {
       background-color: #f2f2f22c;
       margin: 0.5px 0;
       width: 24.79%;
-      height: 23%;
+      height: 280px;
       margin: 1px;
       img {
         width: 100%;
@@ -2762,6 +2786,8 @@ a[data-index="14"] {
     &__btn {
       color: #555;
       font-size: 12px;
+      display: inline-block;
+      margin-top: 360px;
     }
   }
   .bookmark__content__tops {
@@ -2802,15 +2828,15 @@ a[data-index="14"] {
   .image-text {
     height: 1600px;
   }
-  html {
-    color: #000;
-    background-image: url(/assets/sn.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100vh;
-  }
+  // html {
+  //   color: #000;
+  //   background-image: url(/assets/aaa.jpg);
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  //   height: 100vh;
+  // }
   .account-page {
     margin: 30vh auto;
   }
@@ -2822,6 +2848,21 @@ a[data-index="14"] {
     background-color: #f2f2f2;
     height: 100vh;
   } 
+  #bg-video {
+    position:fixed;
+    top: 0;
+    right:0;
+    bottom:0;
+    left: -800px;
+    min-width:100%;
+    min-height:100%;
+    width:auto;
+    height:auto;
+    z-index:-1;
+    video {
+      height: 100vh;
+    }
+  }
 }
 
 
