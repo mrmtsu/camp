@@ -1,0 +1,10 @@
+- visiter=notification.visiter
+- post=notification.micropost
+.user-view.clearfix
+  = link_to user_path(notification.visiter) do
+    = image_tag notification.visiter.image[:small].url, class:"user-thumb", style:"width: 60px;"
+  != notification_form(notification)
+  %span.moderate-font= " (#{time_ago_in_words(notification.created_at)}前)"
+  %br/
+  - if !@comment.nil?
+    %p.moderate-font= @comment

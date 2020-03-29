@@ -18,16 +18,17 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :new]
 
   resources :posts do
+    resources :comments, only: [:create, :destroy]
+    namespace :api do
+      resources :comments, only: :index, defaults: { format: 'json' }
+    end
     member do
       get :following, :followers, :users_posts#追記
       get :map
     end
     resource :bookmarks, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
-    resources :comments, only: [:create, :destroy]
-    namespace :api do
-      resources :comments, only: :index, defaults: { format: 'json' }
-    end
+    
     collection do
       get 'search'
     end

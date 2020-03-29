@@ -55,13 +55,14 @@
             .comment__list
               - if @comments
                 - @comments.each do |comment|
-                  .comment__list__form
-                    = image_tag asset_path(comment.user.avatar), class: "cooment-avatar"
-                    = link_to comment.user.name, "/users/#{comment.user_id}"
-                    %h4= comment.created_at.to_s(:datetime)
-                  .comment__list__text{data: {comment: {id: comment.id}}}
-                    %h3= comment.text
-                    -# = link_to '削除', post_path, method: :delete
+                  .com{data: {comment: {id: comment.id}}}
+                    .comment__list__form
+                      = image_tag asset_path(comment.user.avatar), class: "cooment-avatar"
+                      = link_to comment.user.name, "/users/#{comment.user_id}"
+                      %h4= comment.created_at.to_s(:datetime)
+                    .comment__list__text
+                      %h3= comment.text
+                      -# = link_to '削除', post_path, method: :delete
 
           .show-footer
             - if current_user

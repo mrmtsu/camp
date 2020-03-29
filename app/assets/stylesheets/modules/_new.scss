@@ -38,6 +38,8 @@
       box-shadow:inset 0px 0px 3px #fff;
     }
     &:active{
+      padding-top:10px;
+      padding-bottom:8px;
       border:1px solid #586169;
       background-color: gray;
       color:#e0ebf5;
@@ -91,6 +93,10 @@ h3 {
   }
   &:focus {
     outline: -webkit-focus-ring-color auto 5px;
+  }
+  &:active {
+    padding-top:5px;
+    padding-bottom:4px;
   }
   .new-post__font {
     position: absolute;

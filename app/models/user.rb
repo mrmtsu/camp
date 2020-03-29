@@ -17,6 +17,9 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :following
 
   has_many :bookmarks, dependent: :destroy
+
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
   
   mount_uploader :avatar, AvatarUploader
 
@@ -33,6 +36,17 @@ class User < ApplicationRecord
 
   def bookmarked_by?(user)
     passive_bookmarks.find_by(post_id: user.id).present?
+  end
+
+  def create_notification_following!(current_user)
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'following'])
+    if temp.blank?
+      notification = current_user.active_notifications.new(
+        visited_id: id,
+        action: 'following'
+      )
+      notification.save if notification.valid?
+    end
   end
   
 end

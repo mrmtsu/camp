@@ -3,12 +3,15 @@ $(function(){
 
 
   function buildHTML(comment){
-    var html = `<div class="comment__list__form">
-                  <a href=/users/${comment.user_id}>${comment.user_name}</a>
-                  <h4>${comment.created_at}</h4>
-                </div>
-                <div class="comment__list__text" data-comment-id=${comment.id}>
-                  <h3>${comment.text}</h3>
+    var html = `<div class="com" data-comment-id=${comment.id}>
+                  <div class="comment__list__form">
+                    <img class="cooment-avatar" src="${comment.user_avatar}">
+                    <a href=/users/${comment.user_id}>${comment.user_name}</a>
+                    <h4>${comment.created_at}</h4>
+                  </div>
+                  <div class="comment__list__text">
+                    <h3>${comment.text}</h3>
+                  </div>
                 </div>`
     return html;
   }
@@ -37,20 +40,22 @@ $(function(){
   })
 
   var reloadComments = function() {
-    var last_comment_id = $('.comment__list__text:last').data("comment-id");
+    var last_comment_id = $('.com:last').data("comment-id");
+    console.log(last_comment_id)
     $.ajax({
       url: "api/comments",
-      type: 'GET',
+      type: 'get',
       dataType: 'json',
       data: {id: last_comment_id}
     })
     .done(function(comments) {
+      console.log('succece')
       if (comments.length !== 0) {
         var insertHTML = '';
         $.each(comments, function(i, comment) {
           insertHTML += buildHTML(comment)
         });
-        $('.comment__list').append(insertHTML);
+        $('.com').append(insertHTML);
         $('.comment__list').animate({ scrollTop: $('.comment__list')[0].scrollHeight});
       }
     })
@@ -62,5 +67,3 @@ $(function(){
     setInterval(reloadComments, 7000);
   }
 });
-
-

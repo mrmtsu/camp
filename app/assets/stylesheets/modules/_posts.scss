@@ -646,7 +646,6 @@ h6 {
   }
 }
 .show-comment {
-  background-color: white;
   margin: 80px auto 10px;
   box-sizing: border-box;
   max-width: 1100px;
@@ -694,6 +693,10 @@ h6 {
     }
     &:hover {
       opacity: 0.9;
+    }
+    &:active {
+      padding-top:10px;
+      padding-bottom:8px;
     }
   }
   p {
@@ -765,7 +768,7 @@ img.cooment-avatar {
     #comment_text {
       width: 55%;
       margin-left: 80px;
-      border-radius: 100px;
+      border-radius: 10px;
     }
     .comment__btn {
       margin: 0 50px 0 10px;
@@ -2398,7 +2401,7 @@ a[data-index="14"] {
     text-align: center;
     padding-top: 10px;
     overflow: scroll;
-    height: 200px;
+    height: 400px;
     width: 500px;
     form {
       background-color: #f2f2f2;
@@ -2444,7 +2447,7 @@ a[data-index="14"] {
         margin: 0px 40px 0;
         a {
           color: rgba(71, 68, 68, 0.616);
-          font-size: 15px;
+          font-size: 20px;
           text-decoration: none;
           left: 0;
           top: 0;
@@ -2459,11 +2462,11 @@ a[data-index="14"] {
         display: flex;
         text-decoration: none;
         margin: 0px 60px 10px;
-        height: 80px;
+        height: 90px;
         h3 {
           font-family: sans-serif;
           font-weight: bold;
-          font-size: 1.4rem;
+          font-size: 1.8rem;
           color: #555;
         }
       }
@@ -2592,10 +2595,11 @@ a[data-index="14"] {
       font-size: 35px;
       font-weight: bold;
       margin: 80px auto;
-      width: 80%;
+      width: 100%;
       &__name {
         color: gray;
-        font-size: 50px;
+        font-size: 40px;
+        margin: auto 30px;
         &__icon {
           width: 120px;
           height: 120px;
