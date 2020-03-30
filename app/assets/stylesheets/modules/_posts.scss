@@ -333,7 +333,6 @@
 .contents.row {
   margin: 2px 1px 1px;
   width: 33.1%;
-  background-color: #f2f2f2;
   .name2 {
     font-size: 18px;
     a {
@@ -506,6 +505,16 @@ a.followers__ok {
   padding: 0 5px;
 }
 a.followers__list {
+  color: white;
+  font-size: 10px;
+  background-color: #1077d6;
+  border-radius: 3px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 6px;
+  padding: 0px 5px;
+}
+a.followers__lists {
   color: white;
   font-size: 10px;
   background-color: #1077d6;

@@ -58,7 +58,7 @@ CANP
 * Ruby version
 2.5.1
 * System dependencies
-
+Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 * Configuration
 
 * Database creation

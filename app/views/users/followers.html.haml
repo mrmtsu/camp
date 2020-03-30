@@ -13,7 +13,7 @@
                 - if user.followed_by?(current_user)
                   = link_to "フォロー中", user_relationships_path(user.id), method: :delete, class: "followers__name"
                 - else
-                  = link_to "フォローする", user_relationships_path(user.id), method: :post, class: "followers__list"
+                  = link_to "フォローする", user_relationships_path(user.id), method: :post, class: "followers__lists"
 
         %span
         = link_to "マイページへ戻る", user_path(current_user.id), class: "content__follow__list"
