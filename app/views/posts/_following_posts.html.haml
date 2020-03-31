@@ -1,17 +1,38 @@
 .follow-top
   - @users.each do |user|
-    - @posts = Post.where(user_id: user.id).limit(30).order("created_at DESC")
-    - @posts.each do |post|
-      .contents.row
-        .name1
-          = link_to post_path(post.id) do
-            = image_tag asset_path("#{post.image.to_s}")
-        .name2
-          #{link_to user.name, user_path(user), method: :get}
-        = simple_format render_with_hashtags(post.text.slice(0...8) + "..."), class: "name3"
-        /simple_format render_with_hashtags(@post.text)
-        /.name4= link_to '・・・', post_path(post), method: :get, class: "name4-1"
-        .name5
-          /投稿日時:#{post.created_at.strftime("%Y-%m-%d %H:%M:%S")}
-          %time(datetime="#{post.created_at}")= time_ago_in_words(post.created_at) + "前"
- 
+    -# = user.name
+    -# - @posts = Post.where(user_id: user.id).limit(30).order("created_at DESC")
+    .contents.row
+      .name1
+        = link_to post_path(user.posts.last.id) do
+          = image_tag asset_path("#{user.posts.last.image.to_s}")
+      .name2
+        #{link_to user.name, user_path(user), method: :get}
+      = simple_format render_with_hashtags(user.posts.last.text.slice(0...8) + " ..."), class: "name3"
+      .name5
+        %time(datetime="#{user.posts.last.created_at}")= time_ago_in_words(user.posts.last.created_at) + "前"
+
+    -# - user.posts.each_with_index do |post, i|
+    -#   -# - unless i >= 1
+    -#   .contents.row
+    -#     .name1
+    -#       = link_to post_path(post.id) do
+    -#         = image_tag asset_path("#{post.image.to_s}")
+    -#     .name2
+    -#       #{link_to user.name, user_path(user), method: :get}
+    -#     = simple_format render_with_hashtags(post.text.slice(0...8) + "..."), class: "name3"
+    -#     /simple_format render_with_hashtags(@post.text)
+    -#     /.name4= link_to '・・・', post_path(post), method: :get, class: "name4-1"
+    -#     .name5
+    -#       /投稿日時:#{post.created_at.strftime("%Y-%m-%d %H:%M:%S")}
+    -#       %time(datetime="#{post.created_at}")= time_ago_in_words(post.created_at) + "前"
+    -#       -# - i + 1
+  .contents.row
+    .name1
+      = link_to post_path(current_user.posts.last.id) do
+        = image_tag asset_path("#{current_user.posts.last.image.to_s}")
+    .name2
+      #{link_to current_user.name, user_path(current_user), method: :get}
+    = simple_format render_with_hashtags(current_user.posts.last.text.slice(0...8) + " ..."), class: "name3"
+    .name5
+      %time(datetime="#{current_user.posts.last.created_at}")= time_ago_in_words(current_user.posts.last.created_at) + "前"

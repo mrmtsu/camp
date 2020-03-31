@@ -535,7 +535,7 @@ a.followers__lists {
     align-content: stretch;
     display: flex;
     background-color: #f2f2f22c;
-    margin: 0.5px 0;
+    margin: 5px 0;
     a {
       width: 24.75%;
       height: 250px;
@@ -2128,7 +2128,7 @@ a[data-index="14"] {
     }
     &__topics {
       overflow: scroll;
-      height: 2000px;
+      height: 700px;
       &__list {
         width: 100%;
         display: flex;
@@ -2678,23 +2678,40 @@ a[data-index="14"] {
   }
   a.followers__ok {
     color: white;
-    font-size: 10px;
     background-color: #21d610;
-    border-radius: 3px;
-    height: 20px;
-    line-height: 20px;
-    font-size: 6px;
-    padding: 0 5px;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 25px;
   }
   a.followers__list {
     color: white;
-    font-size: 10px;
     background-color: #1077d6;
-    border-radius: 3px;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    padding: 1px 25px;
+  }
+  a#followers__name {
+    color: white;
+    background-color: #21d610;
+    border-radius: 5px;
     height: 20px;
     line-height: 20px;
-    font-size: 6px;
-    padding: 0 5px;
+    font-size: 12px;
+    padding: 5px 15px;
+  }
+  a.followers__lists {
+    color: white;
+    background-color: #1077d6;
+    border-radius: 5px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    padding: 5px 15px;
   }
 
   .content__topic {

@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     #ログインしている場合（フォローしている人の投稿のみ表示）
     if user_signed_in?
       @user = current_user
-      @users = @user.followings.order("created_at DESC").page(params[:page]).per(20)
+      @users = @user.followings
     else
       
     end
@@ -87,7 +87,7 @@ class PostsController < ApplicationController
 
   def following_posts
     @user = current_user
-    @users = @user.followings.order("created_at DESC").page(params[:page]).per(20)
+    @users = @user.followings.posts.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def hashtag
