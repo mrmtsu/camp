@@ -34,9 +34,13 @@
             });
           }
       
-      -# - @post.image.each do |post|
       = image_tag asset_path(@post.image), class: "address-image"
       
+      -# -if @posts.present?
+      -#   - @posts.each do |post|
+      -#     = link_to post_path(post.id) do
+      -#       = image_tag asset_path(post.image.url)
+
   = link_to "前のページへ戻る", :back, class: "search-footer__btn"
   .footer
     © CAMP

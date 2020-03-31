@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_tweet, only: [:edit, :show]
+  before_action :set_tweet, only: [:edit, :show, :map]
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
@@ -100,7 +100,8 @@ class PostsController < ApplicationController
   end
 
   def map
-    @post = Post.find(params[:id])
+    # @posts = Post.select(:address, :image).distinct
+    @posts = Post.group(:address).having('count(*)>= 2')
   end
   
   private

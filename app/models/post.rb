@@ -29,7 +29,7 @@ class Post < ApplicationRecord
 
   def self.search(search)
     return Post.all unless search
-    Post.where('text LIKE(?)', "%#{search}%")
+    Post.where('text LIKE(?) OR address LIKE(?)', "%#{search}%", "%#{search}%")
   end
 
   #DBへのコミット直前に実施する
