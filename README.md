@@ -42,11 +42,14 @@ CANP
 - トップページ
   ![image](https://user-images.githubusercontent.com/60598010/77853499-5bec8000-721f-11ea-82a5-c9e49523fe62.png)
   <br>
+  <br>
 - 投稿詳細画面
   ![image](https://user-images.githubusercontent.com/60598010/77854360-d66bce80-7224-11ea-8614-3d2ff1d65a05.png)
   <br>
+  <br>
 - コメント画面
   ![image](https://user-images.githubusercontent.com/60598010/77854421-4bd79f00-7225-11ea-9499-cf2e87da11cb.png)
+  <br>
   <br>
 - 位置情報画面
   ![image](https://user-images.githubusercontent.com/60598010/77854527-e0420180-7225-11ea-896e-24f631be031b.png)
