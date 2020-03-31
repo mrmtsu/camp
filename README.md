@@ -19,7 +19,7 @@ CANP
 - 位置情報（google map)
 
 # ER図
-- ![image](https://user-images.githubusercontent.com/60598010/77984940-006ce000-734e-11ea-8f77-07ac585916be.png)
+  ![image](https://user-images.githubusercontent.com/60598010/77984940-006ce000-734e-11ea-8f77-07ac585916be.png)
 
 # ID
 - http://3.115.248.162/
@@ -39,13 +39,17 @@ CANP
 - ユーザー投稿が主体のアプリとなるため、企業の押し付け感がなく情報の信用性が上がる。
 
 # DEMO
-- ![image](https://user-images.githubusercontent.com/60598010/77853499-5bec8000-721f-11ea-82a5-c9e49523fe62.png)
+- トップページ
+  ![image](https://user-images.githubusercontent.com/60598010/77853499-5bec8000-721f-11ea-82a5-c9e49523fe62.png)
   <br>
-- ![image](https://user-images.githubusercontent.com/60598010/77854360-d66bce80-7224-11ea-8614-3d2ff1d65a05.png)
+- 投稿詳細画面
+  ![image](https://user-images.githubusercontent.com/60598010/77854360-d66bce80-7224-11ea-8614-3d2ff1d65a05.png)
   <br>
-- ![image](https://user-images.githubusercontent.com/60598010/77854421-4bd79f00-7225-11ea-9499-cf2e87da11cb.png)
+- コメント画面
+  ![image](https://user-images.githubusercontent.com/60598010/77854421-4bd79f00-7225-11ea-9499-cf2e87da11cb.png)
   <br>
-- ![image](https://user-images.githubusercontent.com/60598010/77854527-e0420180-7225-11ea-896e-24f631be031b.png)
+- 位置情報画面
+  ![image](https://user-images.githubusercontent.com/60598010/77854527-e0420180-7225-11ea-896e-24f631be031b.png)
 
 # INGENUITY
 - 条件分岐を用いたこと。ログインしているユーザー、フォローをすることでそれぞれブラウザに上がってくる情報を変更した点。
