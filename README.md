@@ -18,6 +18,9 @@ CANP
 - お気に入り機能
 - 位置情報（google map)
 
+# ER図
+- ![image](https://user-images.githubusercontent.com/60598010/77984940-006ce000-734e-11ea-8f77-07ac585916be.png)
+
 # ID
 - http://3.115.248.162/
 
