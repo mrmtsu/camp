@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'items/index'
   root "posts#index"
   get '/post/hashtag/:name', to: "posts#hashtag"
+  get '/post/:address', to: "posts#map"
   post '/posts/:post_id/favorites' => "favorites#create"
   delete '/posts/:post_id/favorites' => "favorites#destroy"
   

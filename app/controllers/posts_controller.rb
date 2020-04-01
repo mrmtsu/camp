@@ -5,9 +5,9 @@ class PostsController < ApplicationController
   def index
     @all_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(18)
-    @posts1 = Post.includes(:user).order("RAND()").limit(5)
-    @posts2 = Post.includes(:user).order("RAND()").limit(4)
-    @posts3 = Post.includes(:user).order("RAND()").limit(5)
+    @posts1 = Post.includes(:user).order("RAND()").limit(5).offset(1)
+    @posts2 = Post.includes(:user).order("RAND()").limit(4).offset(6)
+    @posts3 = Post.includes(:user).order("RAND()").limit(5).offset(10)
     @post = Post.new
     if params[:tag]
       @posts = Post.tagged_with(params[:tag])
