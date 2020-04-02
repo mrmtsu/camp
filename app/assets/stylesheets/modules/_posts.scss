@@ -1290,7 +1290,19 @@ a[data-index="14"] {
 
 /*ハンバガーメニュー*/
 @media screen and(max-width:990px) {
-  .header__inner__right {
+  // .header__inner__right {
+  //   display: none;
+  // }
+  .header__inner__right__search {
+    display: none;
+  }
+  .header__inner__right__user {
+    display: none;
+  }
+  .header__inner__right__logout {
+    display: none;
+  }
+  .header__inner__right__login {
     display: none;
   }
 }
@@ -1361,17 +1373,23 @@ a[data-index="14"] {
   left: 0;
   z-index: 9999;/*最前面に*/
   width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-  max-width: 130px;/*最大幅（調整してください）*/
+  max-width: 200px;/*最大幅（調整してください）*/
   height: 100%;
   background: rgb(163, 160, 160);/*背景色*/
   opacity: 0.8;
   transition: .3s ease-in-out;/*滑らかに表示*/
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);/*左に隠しておく*/
-  padding: 10px;
-  font-size: 25px;
+  padding: 40px 20px;
+  font-size: 30px;
   .nav-content__post {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    span.nav-btn {
+      &:hover {
+        cursor: pointer;
+        background-color: gray;
+      }
+    }
     a {
       color: black;
     }
@@ -2305,7 +2323,6 @@ a[data-index="14"] {
     padding: 20px 200px;
     width: 100vw;
     background-color: gray;
-    position: fixed;
     bottom: 0;
     .search__form {
       display: flex;

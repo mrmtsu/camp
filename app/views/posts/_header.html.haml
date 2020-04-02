@@ -52,38 +52,38 @@
               = link_to new_post_path, class: "nav-content__post--btn" do
                 /= icon('fas', 'plus-circle')
                 .nav-content__post--btn
-                  post
+                  %span.nav-btn New Post
             .nav-content__post
               = link_to search_posts_path, class: "nav-content__search--btn" do
                 /= icon('fas', 'search')
                 .nav-content__search--btn__name
-                  Search
+                  %span.nav-btn Search
             .nav-content__post
               = link_to user_path(current_user.id), class: "nav-content__user--btn" do
                 /= icon('fas', 'street-view')
                 .nav-content__user--btn__name
-                  = current_user.name
+                  %span.nav-btn= current_user.name
             .nav-content__post
               = link_to destroy_user_session_path, method: :delete, class: "nav-content__logout--btn" do
                 /= icon('fas', 'user')
                 .nav-content__logout--btn__name
-                  Logout
+                  %span.nav-btn Logout
           - else
             .nav-content__post
               = link_to new_user_registration_path, class: "nav-content__user--btn" do
                 /= icon('fas', 'user-plus')
                 .nav-content__newuser--btn__name
-                  signup
+                  %span.nav-btn signup
             .nav-content__post
               = link_to new_user_session_path, class: "nav-content__login--btn" do
                 /= icon('fas', 'user')
                 .nav-content__login--btn__name
-                  Login
+                  %span.nav-btn Login
             .nav-content__post
               = link_to search_posts_path, class: "nav-content__search--btn" do
                 /= icon('fas', 'search')
                 .nav-content__search--btn__name
-                  Search
+                  %span.nav-btn Search
 
 
   %ul.gnav

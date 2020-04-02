@@ -13,7 +13,7 @@
               %p.new-post__font new post !
         .image-text
           = form.label :address, class: "new-label"
-          = form.text_field :address, placeholder: " ex ) キャンプ場", class: "content__main__text"
+          = form.text_field :address, placeholder: " ex ) キャンプ場", class: "content__main__text", id: "post_text"
           = form.label :text, class: "new-label"
           = form.text_area :text, rows: "10", class: "content__main__text", required: ""
           %br
