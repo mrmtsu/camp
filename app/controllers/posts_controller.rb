@@ -100,8 +100,8 @@ class PostsController < ApplicationController
   end
 
   def map
-    # @posts = Post.select(:address, :image).distinct
-    @posts = Post.group(:address).having('count(*)>= 2')
+    @address = @post.address
+    @posts = Post.where(address: @address)
   end
   
   private

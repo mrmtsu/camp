@@ -4,7 +4,9 @@
   .content
     .content__topss
       .content__hash 
-        %h1=@tag.hashname
+        %h1
+        ='#'
+        =@tag.hashname
         .name
           .name_hash
             - @post.each do |post|

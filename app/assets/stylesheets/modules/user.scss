@@ -170,3 +170,22 @@ i.fas.fa-image.image-icon {
   height: 100px;
 }
 
+@media only screen and (min-width:640px) and (max-width:1023px) {
+  .account-page .account-page__header .btn {
+    margin-top: 20px;
+    color: #fff;
+    background-color: #ccc;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .account-page .btn {
+    display: inline-block;
+    height: 35px;
+    padding: 0px 35px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+  }
+}
