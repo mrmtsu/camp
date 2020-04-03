@@ -2240,7 +2240,8 @@ a[data-index="14"] {
     }
   }
   .content__top {
-    margin-top: 50px;
+    margin: 50px auto;
+    width: 90%;
   }
   .content__top__nosign {
     width: 100%;
@@ -2249,71 +2250,80 @@ a[data-index="14"] {
     align-content: stretch;
     flex-wrap: wrap;
     position: relative;
-    padding: 0 10px;
+    padding: 0;
     a[data-index="1"],a[data-index="2"] {
       margin-top: 1px;
-      width: 30%;
+      width: 220px;
+      height: 219px;
+    }
+
+    a[data-index="3"] {
+      margin-top: 1px;
+      width: 439px;
+      height: 440px;
     }
     
     a[data-index="4"] {
-      width: 288px;
+      width: 220px;
+      height: 219px;
       position: absolute;
       bottom: 0;
     }
     
     a[data-index="5"] {
-      width: 288px;
+      width: 220px;
+      height: 219px;
       position: absolute;
       bottom: 0;
-      left: 299px;
+      left: 220px;
     }
-    
-    a[data-index="3"] {
+
+    a[data-index="6"],a[data-index="7"] {
       margin-top: 1px;
-      width: 39.6%;
-      height: 600px;
+      width: 220px;
+      height: 220px;
     }
-    
-    a[data-index="6"],a[data-index="7"],a[data-index="8"] {
+
+    a[data-index="8"], a[data-index="9"] {
       margin-top: 1px;
-      width: 25.2%;
-    }
-    
-    a[data-index="9"] {
-      margin-top: 1px;
-      width: 23.8%;
+      width: 219px;
+      height: 220px;
     }
     
     a[data-index="10"] {
       margin-top: 1px;
-      width: 39.6%;
-      height: 600px;
+      width: 440px;
+      height: 440px;
     }
 
     a[data-index="11"] {
       margin-top: 1px;
-      width: 288px;
+      width: 219px;
+      height: 220px;
     }
 
     a[data-index="12"] {
       margin-top: 1px;
-      width: 288px;
+      width: 219px;
+      height: 220px;
       position: absolute;
-      right: 10px;
+      right: 0px;
     }
     
     a[data-index="13"] {
-      width: 288px;
+      width: 219px;
+      height: 220px;
       position: absolute;
       bottom: 0;
-      left: 392px;
+      left: 442px;
     }
     
     a[data-index="14"] {
-      width: 288px;
+      width: 219px;
+      height: 220px;
       position: absolute;
       bottom: 0;
-      left: 682px;
+      left: 663px;
     }
 
 
