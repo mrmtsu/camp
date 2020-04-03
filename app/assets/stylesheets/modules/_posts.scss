@@ -735,6 +735,7 @@ h6 {
       a {
         color: rgba(71, 68, 68, 0.616);
         font-size: 15px;
+        font-weight: bold;
         text-decoration: none;
         left: 0;
         top: 0;
@@ -748,8 +749,9 @@ h6 {
     &__text {
       display: flex;
       text-decoration: none;
-      margin: 0px 60px 10px;
+      margin: 0px auto 10px;
       height: 80px;
+      width: 400px;
       h3 {
         font-family: sans-serif;
         font-weight: bold;
