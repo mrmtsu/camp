@@ -12,7 +12,7 @@
         .image-text
           = form.label :address, class: "new-label"
           = form.text_field :address, placeholder: " ex ) ○○キャンプ場", class: "content__main__text", id: "address"
-          %input{type: "button", value: "Search", onclick: "codeAddress()", class: "content__main__btn"}
+          %input{for: "address", type: "button", value: "Search", onclick: "codeAddress()", class: "content__main__btn"}
             #map{style: "width:650px; height: 300px"}
           = form.label :text, class: "new-label"
           = form.text_area :text, rows: "10", class: "content__main__text", required: ""
@@ -28,7 +28,6 @@
             function initMap(){
               // geocoderを初期化
               geocoder = new google.maps.Geocoder()
-
               map = new google.maps.Map(document.getElementById('map'), {
               center: {lat: -34.397, lng: 150.644},
               zoom: 15

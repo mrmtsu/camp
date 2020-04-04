@@ -3,6 +3,7 @@
   .content
     .content__topss
       .content__topss__text
+        = image_tag asset_path(@post.user.avatar), class: "cooment-avatar", id: "post-avatar"
         = link_to @post.user.name, user_path(@post.user.id), class: "content__topss__name"
         //= "さんの投稿"
 
@@ -10,12 +11,12 @@
         - if user_signed_in?
           - if @post.bookmarked_by?(current_user) 
             / ログインしているユーザーがお気に入りしたかどうかで分岐
-            %p
+            %p.bookmark-list
               //お気に入り解除
               = link_to post_bookmarks_path(@post.id), method: :delete, id: 'bookmark-link' do
                 = raw bookmark_icon(@post, current_user)
           - else
-            %p
+            %p.bookmark-list
               //お気に入り登録
               = link_to post_bookmarks_path(@post), method: :post, id: 'bookmark-link-to' do
                 = raw bookmark_icon(@post, current_user)

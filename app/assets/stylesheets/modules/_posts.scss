@@ -754,7 +754,7 @@ h6 {
       h3 {
         font-family: sans-serif;
         font-weight: bold;
-        font-size: 1.4rem;
+        font-size: 1rem;
         color: #555;
       }
     }
@@ -2370,10 +2370,28 @@ a[data-index="14"] {
       justify-content: center;
     }
   }
+  #post-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+  }
   a.content__topss__name {
     color: gray;
     font-weight: bold;
-    margin-right: 30px;
+    margin: auto 30px;
+    font-size: 30px;
+  }
+  #favorite-link-to {
+    margin: auto 10px;
+    font-size: 20px;
+  }
+  #favorite-link {
+    margin: auto 10px;
+    font-size: 20px;
+  }
+  .bookmark-list {
+    margin: auto 0;
+    font-size: 20px;
   }
   a#bookmark-link {
     //position: absolute;
@@ -2426,7 +2444,7 @@ a[data-index="14"] {
       }
       h1 {
         width: 700px;
-        font-size: 30px;
+        font-size: 25px;
         margin: 20px auto;
         text-align: center;
         //margin: 20px 30px 10px 30px;
@@ -2439,7 +2457,7 @@ a[data-index="14"] {
     a {
       text-decoration: none;
       color: #527ddbd2;
-      font-size: 20px;
+      font-size: 12px;
       i.fa.fa-bookmark.fa-bookmark-o {
         color: #9b929241;
       }
@@ -2523,12 +2541,13 @@ a[data-index="14"] {
       &__text {
         display: flex;
         text-decoration: none;
-        margin: 0px 60px 10px;
-        height: 90px;
+        margin-bottom: 10px;
+        height: 100%;
+        width: 70%;
         h3 {
           font-family: sans-serif;
           font-weight: bold;
-          font-size: 1.8rem;
+          font-size: 15px;
           color: #555;
         }
       }
