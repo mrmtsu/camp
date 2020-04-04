@@ -13,8 +13,6 @@ Rails.application.routes.draw do
   post '/posts/:post_id/favorites' => "favorites#create"
   delete '/posts/:post_id/favorites' => "favorites#destroy"
   
-  
-
   resources :notifications, only: :index
   resources :categories, only: [:index, :new]
 
