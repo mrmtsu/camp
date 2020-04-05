@@ -2444,7 +2444,7 @@ a[data-index="14"] {
       }
       h1 {
         width: 700px;
-        font-size: 25px;
+        font-size: 20px;
         margin: 20px auto;
         text-align: center;
         //margin: 20px 30px 10px 30px;
@@ -2483,6 +2483,9 @@ a[data-index="14"] {
     overflow: scroll;
     height: 500px;
     width: 700px;
+    .com {
+      margin-bottom: 25px;
+    }
     form {
       background-color: #f2f2f2;
     }
