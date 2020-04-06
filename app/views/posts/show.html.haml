@@ -5,8 +5,7 @@
       .content__topss__text
         = image_tag asset_path(@post.user.avatar), class: "cooment-avatar", id: "post-avatar"
         = link_to @post.user.name, user_path(@post.user.id), class: "content__topss__name"
-        //= "さんの投稿"
-
+        
         = render "favorites/favorite"
         - if user_signed_in?
           - if @post.bookmarked_by?(current_user) 
@@ -34,10 +33,8 @@
                   = link_to '削除', post_path, method: :delete
     .content__topicss
       .content__topicss__lists
-        -# = image_tag asset_path(@post.image.to_s)
         %a{"data-lightbox" => "group", :href => asset_path(@post.image.to_s), class: "prev-image"}
           %img{:src => asset_path(@post.image.to_s), :width => "300"}
-        //%h1= @post.text
         %h1= simple_format render_with_hashtags(@post.text)
         
         .list
@@ -45,9 +42,6 @@
             = link_to @post.address, map_post_path(@post.id)
           %br
           %h2= @post.created_at.strftime("%Y/%m/%d %H:%M") 
-          
-          -# %h3= @new_history.user_id
-          -# %h3= @all_history.count
         
         //コメント機能
         .show-comment
@@ -63,7 +57,6 @@
                       %h4= comment.created_at.to_s(:datetime)
                     .comment__list__text
                       %h3= comment.text
-                      -# = link_to '削除', post_path, method: :delete
 
           .show-footer
             - if current_user
@@ -83,7 +76,6 @@
 
     .show__topss
       %h2
-        //= @post.user.name
         投稿一覧
       .show__content__topic
         - @posts.each do |post|

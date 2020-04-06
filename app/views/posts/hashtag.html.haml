@@ -21,28 +21,8 @@
                 = form_for(user_relationships_path(@user.id), remote: true) do |f|
                   %div
                     = hidden_field_tag :followed_id, @user.id
-                  /= f.submit "フォローする", class: "btn btn-info"
-          -# .fllw_hash
-          -#   /= "投稿"
-          -#   /= pluralize(current_user.posts.count,"件")
-          -#   %span{:style => "margin-right:15px;"}
-          -#     %span{:style => "margin-right:15px;"}
-          -#     - @user ||= current_user
-          -#     %a{:href => "#{followers_user_path(@user)}"}
-          -#       = @current_user.name
-          -#       フォロワー
-          -#       = succeed "\u4EBA" do
-          -#         %strong#followers.stat
-          -#           = @user.followers.count
-          -#     %span{:style => "margin-right: 15px;"}
-          -#     %a{:href => "#{follows_user_path(@user)}"}
-          -#       %strong#following.stat>
-                  /= @user.followings.count
-                /人をフォロー中
   .row
     = link_to "前のページへ戻る", :back, class: "search-footer__btn"
     .posted_content
       .col-md-8
         .picture_hash
-          /= render @post
-        / .picture

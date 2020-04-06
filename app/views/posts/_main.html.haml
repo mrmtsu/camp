@@ -32,7 +32,6 @@
         .content__topics__list
           .content-bottom
             = render "following_posts"
-            /= link_to 'フォロー中のツイート一覧へ', following_posts_path, {class: 'btn btn-primary withripple' }
   - else
     .content__top
       .content__top__nosign
@@ -50,7 +49,6 @@
             = link_to post_path(post.id), data: { index: i += 10 } do
               = image_tag asset_path("#{post.image.to_s}")
         
-  -# = paginate @posts
   -if @post.image.to_s == 0
   -else
     .content-bottom
