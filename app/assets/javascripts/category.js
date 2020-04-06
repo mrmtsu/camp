@@ -7,20 +7,20 @@ $(function() {
   }
 
   $(".parent_category").on("mouseover", function() {
-    var id = this.id//どのリンクにマウスが乗ってるのか取得します
-    $(".now-selected-red").removeClass("now-selected-red")//赤色のcssのためです
-    $('#' + id).addClass("now-selected-red");//赤色のcssのためです
-    $(".children_category").remove();//一旦出ている子カテゴリ消します！
-    $(".grandchild_category").remove();//孫、てめえもだ！
+    var id = this.id//どのリンクにマウスが乗ってるか取得
+    $(".now-selected-red").removeClass("now-selected-red")//赤色のcssのため
+    $('#' + id).addClass("now-selected-red");//赤色のcssのため
+    $(".children_category").remove();//一旦出ている子カテゴリ消す
+    $(".grandchild_category").remove();
     $.ajax({
       type: 'GET',
-      url: '/categories/new',//とりあえずここでは、newアクションに飛ばしてます
-      data: {parent_id: id},//どの親の要素かを送りますparams[:parent_id]で送られる
+      url: '/categories/new',//newアクションに飛ばす
+      data: {parent_id: id},//どの親の要素かをparams[:parent_id]で送る
       dataType: 'json'
     }).done(function(children) {
       children.forEach(function (child) {//帰ってきた子カテゴリー（配列）
         var html = buildChildHTML(child);//HTMLにして
-        $(".children_list").append(html);//リストに追加します
+        $(".children_list").append(html);//リストに追加
       })
       $(document).on("mouseover", ".parent_category", function () {
         $(".child_category").remove();
@@ -28,7 +28,7 @@ $(function() {
     });
   });
   
-    // 孫カテゴリを追加する処理です基本的に子要素と同じです！
+    // 孫カテゴリを追加する処理です基本的に子要素と同じ。
   function buildGrandChildHTML(child){
     var html =`<a class="grand_child_category" id="${child.id}"
                href="/categories/${child.id}">${child.name}</a>`;
