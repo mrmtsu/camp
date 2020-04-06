@@ -12,19 +12,6 @@ class CommentsController < ApplicationController
     comment.destroy
   end
 
-  #def create
-    #@comment = Comment.new(comment_params)
-    #@post = @comment.post
-    #if @comment.save
-      # ここから
-      #@post.create_notification_comment!(current_user, @comment.id)
-      # ここまで
-      #respond_to :js
-    #else
-      #render 'posts/show'
-    #end
-  #end
-
   private
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, post_id: params[:post_id])
