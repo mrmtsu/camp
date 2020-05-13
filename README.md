@@ -9,7 +9,9 @@ CANP
 - いいね機能
 - フォロー、フォローワー機能
 - お気に入り機能
-- 位置情報（google map)
+- ハッシュタグ機能
+- ランキング機能
+- 位置情報（Google map)
 
 # ER図
   ![image](https://user-images.githubusercontent.com/60598010/77984940-006ce000-734e-11ea-8f77-07ac585916be.png)
@@ -55,7 +57,7 @@ CANP
 
 # INGENUITY
 - AWSへのデプロイ
-- capistrano自動デプロイ化
+- capistranoによる自動デプロイ化
 - GoogleMAPのAPI使用
 - 検索機能のインクリメンタルサーチ実装
 - いいね、コメント機能非同期化
@@ -66,25 +68,12 @@ CANP
 - 投稿画像に紐づいた商品情報
 - 商品購入機能
 - 特集記事（キャンプグルメやキャンプ場など）
-- 地名でも検索できるようにすること
 - 動画投稿
 
 * Ruby version
 2.5.1
 * System dependencies
 Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
 
 
 ## usersテーブル
@@ -104,8 +93,8 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text||
-|text|text||
+|image|text|null: false|
+|text|text|null: false|
 |address|string||
 |latitude|float||
 |longitude|float||
