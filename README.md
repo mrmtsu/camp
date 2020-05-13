@@ -1,10 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 # TITLE
 CANP
 
@@ -61,6 +54,8 @@ CANP
   ![image](https://user-images.githubusercontent.com/60598010/77854527-e0420180-7225-11ea-896e-24f631be031b.png)
 
 # INGENUITY
+- AWSへのデプロイ
+- capistrano自動デプロイ化
 - 条件分岐を用いたこと。ログインしているユーザー、フォローをすることでそれぞれブラウザに上がってくる情報を変更した点。
 - viewの統一感
 
